@@ -1,0 +1,18 @@
+Description of the Project
+- create a QR code project with intention of classmates to link to their portfolios
+
+MVP
+- generate unique QR codes with :
+  put URL
+  choose format (JPG, PNG, SVG) - download and save
+   
+Stretch Goals
+- error correction code
+-   put different colors
+      background color
+- change color using hex wheel
+- put different sizes
+- create a vcard
+- use another API 
+
+
