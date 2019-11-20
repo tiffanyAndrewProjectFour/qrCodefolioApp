@@ -4,6 +4,24 @@ Description of the Project
 MVP
 - generate unique QR codes with :
   put URL
+  download and save
+  put different colors
+      background color
+  put different sizes
+   
+Stretch Goals
+- error correction code
+- change color using hex wheel
+- choose format 
+- create a vcard
+- use another API 
+
+Description of the Project
+- create a QR code project with intention of classmates to link to their portfolios
+
+MVP
+- generate unique QR codes with :
+  put URL
   choose format (JPG, PNG, SVG) - download and save
    
 Stretch Goals
@@ -14,5 +32,3 @@ Stretch Goals
 - put different sizes
 - create a vcard
 - use another API 
-
-
