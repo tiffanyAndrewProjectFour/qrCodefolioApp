@@ -278,6 +278,8 @@ h1 {
 }
 
 body {
+  background-color: #070600;
+  color: #f7f7ff;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
