@@ -6,23 +6,24 @@ qrApp.key = "49e3d00PdlOr6kNixKJddRalSAi41U3oPuUTmv6qDwobjjD9C9k0i0MW";
 
 //https://api.happi.dev/v1/qrcode?data=Hello%20World&width=&dots=000000&bg=FFFFFF&apikey=49e3d00PdlOr6kNixKJddRalSAi41U3oPuUTmv6qDwobjjD9C9k0i0MW
 
-qrApp.getQr = function(qrQuery) {
+qrApp.getQr = function(qrQuery, qrColor) {
   const qrPromise = $.ajax({
     url: `${qrApp.baseUrl}`,
     method: "GET",
     dataType: "json",
     data: {
       apikey: qrApp.key,
-      data: qrQuery
+      data: qrQuery,
+      bg: qrColor
     }
   });
   return qrPromise;
 };
 
-qrApp.displayQr = function() {
-  qrApp.getQr("hello world").then(function(data) {
-    $("").append(
-      `<a href="${data.qrcode}" download="qrCode"> <img src=${data.qrcode} alt="qrCode" width="104" height="104"> </a>`
+qrApp.displayQr = function(data, bgColor) {
+  qrApp.getQr(data, bgColor).then(function(data) {
+    $("#qrCode").append(
+      `<a href="${data.qrcode}" download="qrCode"> <img src=${data.qrcode} alt="qrCode" > </a>`
     );
     // $("main").append(`${data.qrcode}`);
     // console.log(data.qrcode);
@@ -42,6 +43,21 @@ $("input[type='color']").on("change", function() {
   $(".imgTest").css("background-color", this.value);
 });
 
+qrApp.userSubmission = function() {
+  $("form").on("submit", function(e) {
+    e.preventDefault();
+    const userSite = $("#userUrl").val();
+    const userHeight = $("#height").val();
+    const userWidth = $("#width").val();
+    const userColor = $("#color")
+      .val()
+      .substring(1);
+    console.log(userColor);
+
+    qrApp.displayQr(userSite, userColor);
+  });
+};
+
 //4. Pull user data from form with following parameters:
 //a) User's portfolio URL.
 //b) Buttons for user to select what format they want their qr code generated as (JPEG, PNG, SVG).
@@ -52,6 +68,7 @@ $("input[type='color']").on("change", function() {
 //3. Init to start the function
 qrApp.init = function() {
   qrApp.displayQr();
+  qrApp.userSubmission();
 };
 
 //1. Document ready

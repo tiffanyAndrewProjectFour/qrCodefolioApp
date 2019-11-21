@@ -18,41 +18,21 @@
         <div>
           <form action="submit">
             <label for="userUrl" class="visually-hidden">
-              Please enter the website you would like your QR code to be link to
+              Please enter the website you would like your QR code to be linked
+              to. It should begin with "www."
             </label>
-            <input
-              type="text"
-              name="userUrl"
-              id="userUrl"
-              placeholder="ex. http://"
-              required="true"
-            />
-
-            <label for="height" class="visually-hidden">
-              Please enter the length you would like your QR code to be
-              (default: 100px)
-            </label>
-            <input
-              class="height"
-              type="number"
-              name="height"
-              id="height"
-              placeholder="ex. 100 px????"
-              min="0"
-              max="500"
-              step="25"
-            />
+            <input type="text" name="userUrl" id="userUrl" value="www." />
 
             <label for="width" class="visually-hidden">
-              Please enter the width you would like your QR code to be (default:
-              100px)
+              Please enter what size you would like your code to be in pixels
+              (your choice will be both the height and width):
             </label>
             <input
               class="width"
               type="number"
               name="width"
               id="width"
-              placeholder="ex. 100 px????"
+              placeholder="ex. 100px"
               min="0"
               max="500"
               step="25"
@@ -74,11 +54,11 @@
         </div>
         <div>
           <div id="qrCode">
-            <img
+            <!-- <img
               src="./asset/QR-Code-Transparent.png"
               alt="qrCodeSample"
               class="imgTest"
-            />
+            /> -->
             <!-- this is where the live preview would go and the QR code -->
           </div>
           <button>download</button>
