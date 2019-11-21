@@ -4,8 +4,6 @@ const qrApp = {};
 qrApp.baseUrl = "https://api.happi.dev/v1/qrcode?";
 qrApp.key = "49e3d00PdlOr6kNixKJddRalSAi41U3oPuUTmv6qDwobjjD9C9k0i0MW";
 
-//https://api.happi.dev/v1/qrcode?data=Hello%20World&width=&dots=000000&bg=FFFFFF&apikey=49e3d00PdlOr6kNixKJddRalSAi41U3oPuUTmv6qDwobjjD9C9k0i0MW
-
 qrApp.getQr = function(qrQuery, qrColor, qrWidth) {
   const qrPromise = $.ajax({
     url: `${qrApp.baseUrl}`,
@@ -24,7 +22,8 @@ qrApp.getQr = function(qrQuery, qrColor, qrWidth) {
 qrApp.displayQr = function(data, bgColor, width) {
   qrApp.getQr(data, bgColor, width).then(function(data) {
     $("#qrCode").html(
-      `<a href="${data.qrcode}" download="qrCode"> <img src=${data.qrcode} alt="qrCode" > </a>`
+      `<img src=${data.qrcode} alt="qrCode">
+      <button> <a href="${data.qrcode}" download="qrCode"> download </a> </button>`
     );
   });
 };
@@ -39,12 +38,19 @@ qrApp.userSubmission = function() {
       .val()
       .substring(1);
 
+    if (userWidth > 300 || userWidth < 130 || isNaN(userWidth)) {
+      $(".errorMessage").html(`Please enter value from 130px to 300px`);
+      return false;
+    } else {
+      $(".errorMessage").empty("");
+    }
+
     qrApp.displayQr(userSite, userColor, userWidth);
   });
 };
 
 // preview of changes
-$(".width").on("change", function() {
+$(".width").on("keyup", function() {
   $(".imgTest").css("width", this.value);
   $(".imgTest").css("height", this.value);
 });
@@ -59,19 +65,14 @@ $("input[type='color']").on("change", function() {
 //5. Make AJAX request to goqr.me to endpoint: https://api.qrserver.com/v1/create-qr-code/?data=
 
 //6. Generate the users qr code to the page based on users parameters.
-// qrApp.download = function() {
-//   $("#download").on("click", function() {
-//     qrApp.getQr(data, bgColor, width).then(function(data) {
-//       $("#qrCode").html(
-//         `<a href="${data.qrcode}" download="qrCode"> <img src=${data.qrcode} alt="qrCode" > </a>`
-//       );
-//     });
-//   });
-// };
+
 //3. Init to start the function
 qrApp.init = function() {
   qrApp.userSubmission();
-  // qrApp.download();
+  $("#userUrl").val("www.");
+  $("#width").val("");
+  $("#color").val("#ffffff");
+  $(".errorMessage").empty();
 };
 
 //1. Document ready

@@ -30,27 +30,20 @@
             </label>
             <input
               class="width"
-              type="number"
+              type="text"
               name="width"
               id="width"
-              placeholder="ex. 130px"
-              min="130"
-              max="300"
+              placeholder="ex. 200px"
               step="10"
             />
+            <p class="errorMessage"></p>
 
             <label for="color" class="visually-hidden">
               Please enter the color you would like your QR code to be
             </label>
-            <input
-              type="color"
-              name="color"
-              id="color"
-              placeholder="ex. 100 px????"
-              value="#ffffff"
-            />
+            <input type="color" name="color" id="color" value="#ffffff" />
 
-            <button>submit</button>
+            <button id="submit">submit</button>
           </form>
         </div>
         <div>
@@ -62,9 +55,6 @@
             />
             <!-- this is where the live preview would go and the QR code -->
           </div>
-          <form action="file.doc" method="get">
-            <button type="submit" id="download">download</button>
-          </form>
         </div>
       </div>
     </main>

@@ -311,7 +311,9 @@ main {
 .imgTest {
   max-height: 300px;
   min-height: 130px;
+  height: 200px;
   max-width: 300px;
   min-width: 130px;
+  width: 200px;
   background-color: white;
 }
