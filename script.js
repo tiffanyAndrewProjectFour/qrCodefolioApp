@@ -18,6 +18,7 @@ qrApp.getQr = function(qrQuery, qrColor, qrWidth) {
       width: qrWidth
     }
   });
+  co;
   return qrPromise;
 };
 
@@ -26,18 +27,11 @@ qrApp.displayQr = function(data, bgColor, width) {
     $("#qrCode").html(
       `<a href="${data.qrcode}" download="qrCode"> <img src=${data.qrcode} alt="qrCode" > </a>`
     );
+    $("#download").on("click", function() {
+      `<a href="${data.qrcode}" download="qrCode"> <img src=${data.qrcode} alt="qrCode" > </a>`;
+    });
   });
 };
-
-// preview of changes
-$(".width").on("change", function() {
-  $(".imgTest").css("width", this.value);
-  $(".imgTest").css("height", this.value);
-});
-
-$("input[type='color']").on("change", function() {
-  $(".imgTest").css("background-color", this.value);
-});
 
 qrApp.userSubmission = function() {
   $("form").on("submit", function(e) {
@@ -53,16 +47,35 @@ qrApp.userSubmission = function() {
   });
 };
 
+// preview of changes
+$(".width").on("change", function() {
+  $(".imgTest").css("width", this.value);
+  $(".imgTest").css("height", this.value);
+});
+
+$("input[type='color']").on("change", function() {
+  $(".imgTest").css("background-color", this.value);
+});
+
 //4. Pull user data from form with following parameters:
 //a) User's portfolio URL.
 //b) Buttons for user to select what format they want their qr code generated as (JPEG, PNG, SVG).
 //5. Make AJAX request to goqr.me to endpoint: https://api.qrserver.com/v1/create-qr-code/?data=
 
 //6. Generate the users qr code to the page based on users parameters.
-
+qrApp.download = function() {
+  $("#download").on("click", function() {
+    qrApp.getQr(data, bgColor, width).then(function(data) {
+      $("#qrCode").html(
+        `<a href="${data.qrcode}" download="qrCode"> <img src=${data.qrcode} alt="qrCode" > </a>`
+      );
+    });
+  });
+};
 //3. Init to start the function
 qrApp.init = function() {
   qrApp.userSubmission();
+  qrApp.download();
 };
 
 //1. Document ready
@@ -72,3 +85,4 @@ $(function() {
 
 // technical challenge
 // 1. the first API we found does not work because it produces an image instead of a JSON file.
+// 2. git commit pull and push
