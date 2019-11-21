@@ -1,0 +1,31 @@
+h1 {
+  text-align: center;
+  font-size: 9rem;
+  font-family: $VT323;
+}
+
+body {
+  height: 100vh;
+}
+
+main {
+  font-family: $openSans;
+}
+
+.flexParent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  div {
+    width: 50%;
+    border: 1px solid red;
+    form {
+      label,
+      input {
+        display: block;
+        font-size: 2rem;
+      }
+    }
+  }
+}

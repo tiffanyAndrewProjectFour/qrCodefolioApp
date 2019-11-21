@@ -21,7 +21,7 @@ qrApp.getQr = function(qrQuery) {
 
 qrApp.displayQr = function() {
   qrApp.getQr("hello world").then(function(data) {
-    $("div").append(
+    $("").append(
       `<a href="${data.qrcode}" download="qrCode"> <img src=${data.qrcode} alt="qrCode" width="104" height="104"> </a>`
     );
     // $("main").append(`${data.qrcode}`);

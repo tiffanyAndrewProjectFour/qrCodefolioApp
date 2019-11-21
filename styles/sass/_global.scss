@@ -1,0 +1,44 @@
+$backgroundColor: #f7f7ff;
+$secondaryColor: #070600;
+$fontColor: #23b5d3;
+$secondaryFontColor: #279af1;
+$accentColor: #f61067;
+
+$VT323: "VT323", monospace;
+$openSans: "Open Sans", sans-serif;
+
+/* stripping style */
+body,
+h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+button {
+  font-size: 2.5rem;
+  display: block;
+  margin: 0 auto;
+  background-color: $accentColor;
+  text-transform: uppercase;
+}

@@ -4,11 +4,79 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>QR Code Generator</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans|VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <main>
-      <div></div>
+    <main class="wrapper">
+      <!-- <h1>QR Code Generator</h1> -->
+      <div class="flexParent">
+        <div>
+          <form action="submit">
+            <label for="userUrl" class="visually-hidden">
+              Please enter the website you would like your QR code to be link to
+            </label>
+            <input
+              type="text"
+              name="userUrl"
+              id="userUrl"
+              placeholder="ex. http://"
+              required="true"
+            />
+
+            <label for="length" class="visually-hidden">
+              Please enter the length you would like your QR code to be
+              (default: 100px)
+            </label>
+            <input
+              type="number"
+              name="length"
+              id="length"
+              placeholder="ex. 100 px????"
+              min="0"
+              max="500"
+              step="25"
+            />
+
+            <label for="width" class="visually-hidden">
+              Please enter the width you would like your QR code to be (default:
+              100px)
+            </label>
+            <input
+              type="number"
+              name="width"
+              id="width"
+              placeholder="ex. 100 px????"
+              min="0"
+              max="500"
+              step="25"
+            />
+
+            <label for="color" class="visually-hidden">
+              Please enter the color you would like your QR code to be
+            </label>
+            <input
+              type="color"
+              name="color"
+              id="color"
+              placeholder="ex. 100 px????"
+              value="#ffffff"
+            />
+
+            <button>submit</button>
+          </form>
+        </div>
+        <div>
+          <div>
+            <!-- this is where the live preview would go and the QR code -->
+          </div>
+          <button>download</button>
+        </div>
+      </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="script.js"></script>
