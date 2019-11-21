@@ -306,11 +306,16 @@ main {
 
 .flexParent div {
   width: 50%;
-  border: 1px solid red;
 }
 
 .flexParent div form label,
 .flexParent div form input {
   display: block;
   font-size: 2rem;
+}
+
+.imgTest {
+  height: 100px;
+  width: 100px;
+  background-color: white;
 }

@@ -28,14 +28,15 @@
               required="true"
             />
 
-            <label for="length" class="visually-hidden">
+            <label for="height" class="visually-hidden">
               Please enter the length you would like your QR code to be
               (default: 100px)
             </label>
             <input
+              class="height"
               type="number"
-              name="length"
-              id="length"
+              name="height"
+              id="height"
               placeholder="ex. 100 px????"
               min="0"
               max="500"
@@ -47,6 +48,7 @@
               100px)
             </label>
             <input
+              class="width"
               type="number"
               name="width"
               id="width"
@@ -71,7 +73,12 @@
           </form>
         </div>
         <div>
-          <div>
+          <div id="qrCode">
+            <img
+              src="./asset/QR-Code-Transparent.png"
+              alt="qrCodeSample"
+              class="imgTest"
+            />
             <!-- this is where the live preview would go and the QR code -->
           </div>
           <button>download</button>

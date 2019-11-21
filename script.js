@@ -29,6 +29,19 @@ qrApp.displayQr = function() {
   });
 };
 
+// preview of changes
+$(".height").on("change", function() {
+  $(".imgTest").css("height", this.value);
+});
+
+$(".width").on("change", function() {
+  $(".imgTest").css("width", this.value);
+});
+
+$("input[type='color']").on("change", function() {
+  $(".imgTest").css("background-color", this.value);
+});
+
 //4. Pull user data from form with following parameters:
 //a) User's portfolio URL.
 //b) Buttons for user to select what format they want their qr code generated as (JPEG, PNG, SVG).

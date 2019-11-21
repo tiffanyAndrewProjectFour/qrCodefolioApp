@@ -24,7 +24,7 @@ main {
   // align-items: center;
   div {
     width: 50%;
-    border: 1px solid red;
+    // border: 1px solid red;
     form {
       label,
       input {
@@ -33,4 +33,10 @@ main {
       }
     }
   }
+}
+
+.imgTest {
+  height: 100px;
+  width: 100px;
+  background-color: white;
 }
