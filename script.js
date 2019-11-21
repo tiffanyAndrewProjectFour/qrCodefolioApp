@@ -23,7 +23,8 @@ qrApp.displayQr = function(data, bgColor, width) {
   qrApp.getQr(data, bgColor, width).then(function(data) {
     $("#qrCode").html(
       `<img src=${data.qrcode} alt="qrCode">
-      <button> <a href="${data.qrcode}" download="qrCode"> download </a> </button>`
+      <button> <a href="${data.qrcode}" download="qrCode"> download </a> </button>
+      <button class = "printMe" id = "printMe"> print </button>`
     );
   });
 };
@@ -33,7 +34,6 @@ qrApp.userSubmission = function() {
     e.preventDefault();
     const userSite = $("#userUrl").val();
     const userWidth = parseInt($("#width").val());
-    console.log(userWidth);
     const userColor = $("#color")
       .val()
       .substring(1);
@@ -74,6 +74,11 @@ qrApp.init = function() {
   $("#color").val("#ffffff");
   $(".errorMessage").empty();
 };
+
+$("#printMe").on("click", function() {
+  console.log("print");
+  window.print();
+});
 
 //1. Document ready
 $(function() {
