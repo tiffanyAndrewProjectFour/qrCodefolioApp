@@ -21,9 +21,9 @@ qrApp.getQr = function(qrQuery, qrColor, qrWidth) {
   return qrPromise;
 };
 
-qrApp.displayQr = function(data, bgColor) {
-  qrApp.getQr(data, bgColor).then(function(data) {
-    $("#qrCode").append(
+qrApp.displayQr = function(data, bgColor, width) {
+  qrApp.getQr(data, bgColor, width).then(function(data) {
+    $("#qrCode").html(
       `<a href="${data.qrcode}" download="qrCode"> <img src=${data.qrcode} alt="qrCode" > </a>`
     );
   });
@@ -43,11 +43,11 @@ qrApp.userSubmission = function() {
   $("form").on("submit", function(e) {
     e.preventDefault();
     const userSite = $("#userUrl").val();
-    const userWidth = $("#width").val();
+    const userWidth = parseInt($("#width").val());
+    console.log(userWidth);
     const userColor = $("#color")
       .val()
       .substring(1);
-    console.log(userColor);
 
     qrApp.displayQr(userSite, userColor, userWidth);
   });
