@@ -18,7 +18,6 @@ qrApp.getQr = function(qrQuery, qrColor, qrWidth) {
       width: qrWidth
     }
   });
-  co;
   return qrPromise;
 };
 
@@ -27,9 +26,6 @@ qrApp.displayQr = function(data, bgColor, width) {
     $("#qrCode").html(
       `<a href="${data.qrcode}" download="qrCode"> <img src=${data.qrcode} alt="qrCode" > </a>`
     );
-    $("#download").on("click", function() {
-      `<a href="${data.qrcode}" download="qrCode"> <img src=${data.qrcode} alt="qrCode" > </a>`;
-    });
   });
 };
 
@@ -63,19 +59,19 @@ $("input[type='color']").on("change", function() {
 //5. Make AJAX request to goqr.me to endpoint: https://api.qrserver.com/v1/create-qr-code/?data=
 
 //6. Generate the users qr code to the page based on users parameters.
-qrApp.download = function() {
-  $("#download").on("click", function() {
-    qrApp.getQr(data, bgColor, width).then(function(data) {
-      $("#qrCode").html(
-        `<a href="${data.qrcode}" download="qrCode"> <img src=${data.qrcode} alt="qrCode" > </a>`
-      );
-    });
-  });
-};
+// qrApp.download = function() {
+//   $("#download").on("click", function() {
+//     qrApp.getQr(data, bgColor, width).then(function(data) {
+//       $("#qrCode").html(
+//         `<a href="${data.qrcode}" download="qrCode"> <img src=${data.qrcode} alt="qrCode" > </a>`
+//       );
+//     });
+//   });
+// };
 //3. Init to start the function
 qrApp.init = function() {
   qrApp.userSubmission();
-  qrApp.download();
+  // qrApp.download();
 };
 
 //1. Document ready
