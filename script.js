@@ -6,7 +6,7 @@ qrApp.key = "49e3d00PdlOr6kNixKJddRalSAi41U3oPuUTmv6qDwobjjD9C9k0i0MW";
 
 //https://api.happi.dev/v1/qrcode?data=Hello%20World&width=&dots=000000&bg=FFFFFF&apikey=49e3d00PdlOr6kNixKJddRalSAi41U3oPuUTmv6qDwobjjD9C9k0i0MW
 
-qrApp.getQr = function(qrQuery, qrColor) {
+qrApp.getQr = function(qrQuery, qrColor, qrWidth) {
   const qrPromise = $.ajax({
     url: `${qrApp.baseUrl}`,
     method: "GET",
@@ -14,7 +14,8 @@ qrApp.getQr = function(qrQuery, qrColor) {
     data: {
       apikey: qrApp.key,
       data: qrQuery,
-      bg: qrColor
+      bg: qrColor,
+      width: qrWidth
     }
   });
   return qrPromise;
@@ -25,18 +26,13 @@ qrApp.displayQr = function(data, bgColor) {
     $("#qrCode").append(
       `<a href="${data.qrcode}" download="qrCode"> <img src=${data.qrcode} alt="qrCode" > </a>`
     );
-    // $("main").append(`${data.qrcode}`);
-    // console.log(data.qrcode);
   });
 };
 
 // preview of changes
-$(".height").on("change", function() {
-  $(".imgTest").css("height", this.value);
-});
-
 $(".width").on("change", function() {
   $(".imgTest").css("width", this.value);
+  $(".imgTest").css("height", this.value);
 });
 
 $("input[type='color']").on("change", function() {
@@ -47,14 +43,13 @@ qrApp.userSubmission = function() {
   $("form").on("submit", function(e) {
     e.preventDefault();
     const userSite = $("#userUrl").val();
-    const userHeight = $("#height").val();
     const userWidth = $("#width").val();
     const userColor = $("#color")
       .val()
       .substring(1);
     console.log(userColor);
 
-    qrApp.displayQr(userSite, userColor);
+    qrApp.displayQr(userSite, userColor, userWidth);
   });
 };
 
@@ -67,7 +62,6 @@ qrApp.userSubmission = function() {
 
 //3. Init to start the function
 qrApp.init = function() {
-  qrApp.displayQr();
   qrApp.userSubmission();
 };
 
