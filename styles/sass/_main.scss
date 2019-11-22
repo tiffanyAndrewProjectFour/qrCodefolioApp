@@ -17,6 +17,24 @@ main {
   font-family: $openSans;
 }
 
+.flexParent {
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: center;
+  // align-items: center;
+  div {
+    width: 50%;
+    // border: 1px solid red;
+    form {
+      label,
+      input {
+        display: block;
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
 .imgTest {
   max-height: 300px;
   min-height: 130px;

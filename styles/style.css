@@ -317,3 +317,9 @@ main {
   width: 200px;
   background-color: white;
 }
+
+.print {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

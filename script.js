@@ -1,7 +1,7 @@
 //2. Set up namespace qrApp:
 const qrApp = {};
 
-qrApp.baseUrl = "https://api.happi.dev/v1/qrcode?";
+qrApp.baseUrl = "https://api.happi.dev/v1/qrCode?";
 qrApp.key = "49e3d00PdlOr6kNixKJddRalSAi41U3oPuUTmv6qDwobjjD9C9k0i0MW";
 
 qrApp.getQr = function(qrQuery, qrColor, qrWidth) {
@@ -20,12 +20,27 @@ qrApp.getQr = function(qrQuery, qrColor, qrWidth) {
 };
 
 qrApp.displayQr = function(data, bgColor, width) {
-  qrApp.getQr(data, bgColor, width).then(function(data) {
-    $("#qrCode").html(
-      `<img src=${data.qrcode} alt="qrCode">
-      <button> <a href="${data.qrcode}" download="qrCode"> download </a> </button>`
-    );
-  });
+  qrApp
+    .getQr(data, bgColor, width)
+    .then(function(data) {
+      $("#qrCode").html(
+        `<img src=${data.qrcode} alt="qrCode" id = "qrCodeShow">
+      <button> <a href="${data.qrcode}" download="qrCode"> download </a> </button>
+      <button id = "printMe"> print </button>`
+      );
+      $("#printMe").on("click", function() {
+        $("h1").hide();
+        $("form").hide();
+        $("button").hide();
+        $("#qrCodeShow").show();
+        $("#qrCodeShow").addClass("print");
+        $("body").css("height", "50vh");
+        window.print();
+      });
+    })
+    .fail(function(error) {
+      console.log(error);
+    });
 };
 
 qrApp.userSubmission = function() {
