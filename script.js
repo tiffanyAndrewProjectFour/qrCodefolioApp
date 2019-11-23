@@ -39,7 +39,9 @@ qrApp.displayQr = function(data, bgColor, width) {
       });
     })
     .fail(function(error) {
-      console.log(error);
+      $("body").html(
+        "<h1> There is some error on the page. Please try again later </h1>"
+      );
     });
 };
 
