@@ -20,22 +20,29 @@ qrApp.getQr = function(qrQuery, qrColor, qrWidth) {
 };
 
 qrApp.displayQr = function(data, bgColor, width) {
-  qrApp.getQr(data, bgColor, width).then(function(data) {
-    $("#qrCode").html(
-      `<img src=${data.qrcode} alt="qrCode" id = "qrCodeShow">
+  qrApp
+    .getQr(data, bgColor, width)
+    .then(function(data) {
+      $("#qrCode").html(
+        `<img src=${data.qrcode} alt="qrCode" id = "qrCodeShow">
       <button> <a href="${data.qrcode}" download="qrCode"> download </a> </button>
       <button id = "printMe"> print </button>`
-    );
-    $("#printMe").on("click", function() {
-      $("h1").hide();
-      $("form").hide();
-      $("button").hide();
-      $("#qrCodeShow").show();
-      $("#qrCodeShow").addClass("print");
-      $("body").css("height", "50vh");
-      window.print();
+      );
+      $("#printMe").on("click", function() {
+        $("h1").hide();
+        $("form").hide();
+        $("button").hide();
+        $("#qrCodeShow").show();
+        $("#qrCodeShow").addClass("print");
+        $("body").css("height", "50vh");
+        window.print();
+      });
+    })
+    .fail(function(error) {
+      $("body").html(
+        "<h1> There is some error on the page. Please try again later </h1>"
+      );
     });
-  });
 };
 
 qrApp.userSubmission = function() {
