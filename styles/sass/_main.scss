@@ -9,35 +9,63 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: $sunglo;
+  margin-top: 1%;
   height: 100vh;
-  margin: 0;
   padding: 0;
+  img {
+    height: 65%;
+  }
   h1 {
     text-align: center;
-    color: $black;
-    font-size: 10rem;
     font-family: $playtone;
-    margin: 2%;
+    color: $black;
+    font-size: 8rem;
+    margin: 1%;
   }
   p {
     font-family: $raleway;
     color: $white;
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: 600;
+    margin: 0.5%;
   }
 }
 
-.logoImage {
-  margin-top: 10%;
+.qrGenerator {
+  margin-bottom: 3%;
 }
 
-.qrGenerator {
-  height: 100vh;
+.links {
+  width: 100%;
+  ul {
+    display: flex;
+    list-style: none;
+    padding-left: 10px;
+    margin: 10px 0;
+    li {
+      padding-right: 10px;
+    }
+    a {
+      text-decoration: none;
+      font-family: $raleway;
+      color: $white;
+      font-size: 2rem;
+      font-weight: 600;
+      padding: 8px;
+      &:hover {
+        color: $deluge;
+        cursor: pointer;
+      }
+      i {
+        padding-right: 5px;
+      }
+    }
+  }
 }
 
 .flexParent {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -82,11 +110,13 @@ input[name="reset"] {
   font-style: italic;
 }
 
-.userInputForms {
+.userUrlForm,
+.userTwitterForm,
+.userContactForm {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 47.5%;
+  width: 49%;
   background: $white;
   padding: 30px;
   color: $black;
@@ -98,9 +128,9 @@ input[name="reset"] {
 
 .generatedPreview {
   display: flex;
-  position: relative;
   flex-direction: column;
-  width: 47.5%;
+  align-self: stretch;
+  width: 49%;
   background: $white;
   text-align: center;
   padding: 3%;

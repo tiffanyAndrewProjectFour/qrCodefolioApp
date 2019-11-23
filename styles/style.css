@@ -308,41 +308,77 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #ef6770;
+  margin-top: 1%;
   height: 100vh;
-  margin: 0;
   padding: 0;
+}
+
+.logo img {
+  height: 65%;
 }
 
 .logo h1 {
   text-align: center;
-  color: #343039;
-  font-size: 10rem;
   font-family: "Paytone One", sans-serif;
-  margin: 2%;
+  color: #343039;
+  font-size: 8rem;
+  margin: 1%;
 }
 
 .logo p {
   font-family: "Raleway", sans-serif;
   color: #f7f6f5;
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 600;
-}
-
-.logoImage {
-  margin-top: 10%;
+  margin: 0.5%;
 }
 
 .qrGenerator {
-  height: 100vh;
+  margin-bottom: 3%;
+}
+
+.links {
+  width: 100%;
+}
+
+.links ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  padding-left: 10px;
+  margin: 10px 0;
+}
+
+.links ul li {
+  padding-right: 10px;
+}
+
+.links ul a {
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  color: #f7f6f5;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 8px;
+}
+
+.links ul a:hover {
+  color: #8070b2;
+  cursor: pointer;
+}
+
+.links ul a i {
+  padding-right: 5px;
 }
 
 .flexParent {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -392,7 +428,9 @@ input[name="reset"]:hover {
   font-style: italic;
 }
 
-.userInputForms {
+.userUrlForm,
+.userTwitterForm,
+.userContactForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -403,7 +441,7 @@ input[name="reset"]:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 47.5%;
+  width: 49%;
   background: #f7f6f5;
   padding: 30px;
   color: #343039;
@@ -417,12 +455,13 @@ input[name="reset"]:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 47.5%;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  width: 49%;
   background: #f7f6f5;
   text-align: center;
   padding: 3%;
