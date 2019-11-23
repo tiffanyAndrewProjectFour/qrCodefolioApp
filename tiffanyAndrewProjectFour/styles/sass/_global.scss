@@ -1,0 +1,63 @@
+//Colors:
+$white: #f7f6f5;
+$pinkSwan: #c4b5b8;
+$sunglo: #ef6770;
+$deluge: #8070b2;
+$black: #343039;
+
+//Fonts
+$playtone: "Paytone One", sans-serif;
+$raleway: "Raleway", sans-serif;
+
+/* stripping style */
+body,
+h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+button {
+  font-size: 2.5rem;
+  display: block;
+  background-color: $black;
+  border-style: none;
+  text-transform: uppercase;
+  font-family: $raleway;
+  font-size: 2rem;
+  color: $white;
+  text-align: center;
+  width: 50%;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+
+  &:hover {
+    background: $deluge;
+    cursor: pointer;
+  }
+}
