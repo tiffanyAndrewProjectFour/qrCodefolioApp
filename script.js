@@ -89,6 +89,10 @@ qrApp.init = function() {
   $("#width").val("");
   $("#color").val("#ffffff");
   $(".errorMessage").empty();
+  $("#userWebsite").click(function() {
+    $(".userUrlForm").show();
+    $(".userTwitterForm").hide();
+  });
 };
 
 //1. Document ready
