@@ -1,11 +1,13 @@
-$backgroundColor: #070600;
-$secondaryColor: #23b5d3;
-$fontColor: #f7f7ff;
-$secondaryFontColor: #279af1;
-$accentColor: #f61067;
+//Colors:
+$white: #f7f6f5;
+$pinkSwan: #c4b5b8;
+$sunglo: #ef6770;
+$deluge: #8070b2;
+$black: #343039;
 
-$VT323: "VT323", monospace;
-$openSans: "Open Sans", sans-serif;
+//Fonts
+$playtone: "Paytone One", sans-serif;
+$raleway: "Raleway", sans-serif;
 
 /* stripping style */
 body,
@@ -23,6 +25,16 @@ html {
   font-size: 62.5%;
 }
 
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
+}
+
 .wrapper {
   max-width: 1200px;
   width: 80%;
@@ -32,7 +44,20 @@ html {
 button {
   font-size: 2.5rem;
   display: block;
-  margin: 0 auto;
-  background-color: $accentColor;
+  background-color: $black;
+  border-style: none;
   text-transform: uppercase;
+  font-family: $raleway;
+  font-size: 2rem;
+  color: $white;
+  text-align: center;
+  width: 50%;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+
+  &:hover {
+    background: $deluge;
+    cursor: pointer;
+  }
 }

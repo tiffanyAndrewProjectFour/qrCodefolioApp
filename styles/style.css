@@ -251,6 +251,18 @@ html {
   font-size: 62.5%;
 }
 
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  /* added line */
+}
+
 .wrapper {
   max-width: 1200px;
   width: 80%;
@@ -260,52 +272,170 @@ html {
 button {
   font-size: 2.5rem;
   display: block;
-  margin: 0 auto;
-  background-color: #f61067;
+  background-color: #343039;
+  border-style: none;
   text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  color: #f7f6f5;
+  text-align: center;
+  width: 50%;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
 }
 
-h1 {
-  text-align: center;
-  font-size: 9rem;
-  font-family: "VT323", monospace;
+button:hover {
+  background: #8070b2;
+  cursor: pointer;
 }
 
 body {
-  background-color: #070600;
-  color: #f7f7ff;
-  height: 100vh;
+  background: #ef6770;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #ef6770;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
-main {
-  font-family: "Open Sans", sans-serif;
+.logo h1 {
+  text-align: center;
+  color: #343039;
+  font-size: 10rem;
+  font-family: "Paytone One", sans-serif;
+  margin: 2%;
+}
+
+.logo p {
+  font-family: "Raleway", sans-serif;
+  color: #f7f6f5;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.logoImage {
+  margin-top: 10%;
+}
+
+.qrGenerator {
+  height: 100vh;
 }
 
 .flexParent {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.flexParent div {
-  width: 50%;
+.inputBox {
+  margin-bottom: 30px;
 }
 
-.flexParent div form label,
-.flexParent div form input {
+.inputBox input {
   display: block;
   font-size: 2rem;
+  background: rgba(196, 181, 184, 0.2);
+  border-style: none;
+  border-radius: 5px;
+  font-family: "Raleway", sans-serif;
+  color: #343039;
+  width: 80%;
+  padding: 10px 15px 15px 50px;
+  margin-top: 15px;
+}
+
+.inputBox .colorPicker {
+  margin: 10px 0;
+  padding: 0;
+  height: 50px;
+}
+
+input[name="reset"] {
+  background: none;
+  border: none;
+  color: #ef6770;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+input[name="reset"]:hover {
+  color: #8070b2;
+  cursor: pointer;
+}
+
+.errorMessage {
+  font-family: "Raleway", sans-serif;
+  color: #ef6770;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.userInputForms {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 47.5%;
+  background: #f7f6f5;
+  padding: 30px;
+  color: #343039;
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  border-radius: 10px;
+}
+
+.generatedPreview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 47.5%;
+  background: #f7f6f5;
+  text-align: center;
+  padding: 3%;
+  border-radius: 10px;
+}
+
+.generatedPreview button {
+  margin: 10px auto;
+}
+
+.generatedPreview button a {
+  text-decoration: none;
+  color: #f7f6f5;
 }
 
 .imgTest {
@@ -316,10 +446,4 @@ main {
   min-width: 130px;
   width: 200px;
   background-color: white;
-}
-
-.print {
-  position: absolute;
-  top: 0;
-  left: 0;
 }

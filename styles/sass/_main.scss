@@ -1,36 +1,115 @@
-h1 {
-  text-align: center;
-  font-size: 9rem;
-  font-family: $VT323;
-}
-
 body {
-  background-color: $backgroundColor;
-  color: $fontColor;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: $sunglo;
+  margin: 0;
+  padding: 0;
 }
 
-main {
-  font-family: $openSans;
+.logo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: $sunglo;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  h1 {
+    text-align: center;
+    color: $black;
+    font-size: 10rem;
+    font-family: $playtone;
+    margin: 2%;
+  }
+  p {
+    font-family: $raleway;
+    color: $white;
+    font-size: 3rem;
+    font-weight: 600;
+  }
+}
+
+.logoImage {
+  margin-top: 10%;
+}
+
+.qrGenerator {
+  height: 100vh;
 }
 
 .flexParent {
   display: flex;
-  flex-wrap: wrap;
-  // justify-content: center;
-  // align-items: center;
-  div {
-    width: 50%;
-    // border: 1px solid red;
-    form {
-      label,
-      input {
-        display: block;
-        font-size: 2rem;
-      }
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.inputBox {
+  margin-bottom: 30px;
+  input {
+    display: block;
+    font-size: 2rem;
+    background: rgba(196, 181, 184, 0.2);
+    border-style: none;
+    border-radius: 5px;
+    font-family: $raleway;
+    color: $black;
+    width: 80%;
+    padding: 10px 15px 15px 50px;
+    margin-top: 15px;
+  }
+  .colorPicker {
+    margin: 10px 0;
+    padding: 0;
+    height: 50px;
+  }
+}
+
+input[name="reset"] {
+  background: none;
+  border: none;
+  color: $sunglo;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  &:hover {
+    color: $deluge;
+    cursor: pointer;
+  }
+}
+
+.errorMessage {
+  font-family: $raleway;
+  color: $sunglo;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.userInputForms {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 47.5%;
+  background: $white;
+  padding: 30px;
+  color: $black;
+  font-family: $raleway;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  border-radius: 10px;
+}
+
+.generatedPreview {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 47.5%;
+  background: $white;
+  text-align: center;
+  padding: 3%;
+  border-radius: 10px;
+  button {
+    margin: 10px auto;
+    a {
+      text-decoration: none;
+      color: $white;
     }
   }
 }

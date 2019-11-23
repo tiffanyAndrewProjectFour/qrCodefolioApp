@@ -55,7 +55,7 @@ qrApp.userSubmission = function() {
       .substring(1);
 
     if (userWidth > 300 || userWidth < 130 || isNaN(userWidth)) {
-      $(".errorMessage").html(`Please enter value from 130px to 300px`);
+      $(".errorMessage").html(`Please enter value from 130px to 300px!`);
       return false;
     } else {
       $(".errorMessage").empty("");
