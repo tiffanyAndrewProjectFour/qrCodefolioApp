@@ -1,0 +1,54 @@
+//Media Queries
+
+//1200px
+@media (max-width: 1200px) {
+  .flexParent {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .userUrlForm {
+    width: 100%;
+  }
+
+  .generatedPreview {
+    width: 100%;
+    margin-top: 2%;
+  }
+} //END OF 1200px QUERY
+
+// 710px
+@media (max-width: 820px) {
+  .logo {
+    h1 {
+      font-size: 5.5rem;
+      margin-top: 5%;
+    }
+    p {
+      font-size: 2rem;
+    }
+  }
+
+  .qrGenerator {
+    margin-top: 15%;
+  }
+
+  .flexParent label,
+  .flexParent input {
+    font-size: 1.6rem;
+  }
+} //END OF 710PX QUERY
+
+// 480px
+@media (max-width: 480px) {
+  .logo {
+    h1 {
+      font-size: 4rem;
+      margin-top: 10%;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+  }
+} //END OF 480PX QUERY
