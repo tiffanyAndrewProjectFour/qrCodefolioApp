@@ -392,6 +392,11 @@ body {
   padding-right: 5px;
 }
 
+.currentLink {
+  text-decoration: underline;
+  color: #343039;
+}
+
 .flexParent {
   display: -webkit-box;
   display: -ms-flexbox;

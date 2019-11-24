@@ -63,6 +63,11 @@ body {
   }
 }
 
+.currentLink {
+  text-decoration: underline;
+  color: $fontColor;
+}
+
 .flexParent {
   display: flex;
   justify-content: space-between;
