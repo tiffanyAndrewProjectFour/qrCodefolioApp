@@ -116,24 +116,27 @@ $("input[type='color']").on("change", function() {
 qrApp.init = function() {
   qrApp.userSubmission();
   qrApp.userTwitterSubmission();
+
   $("#userUrl").val("www.");
   $("#width").val("");
   $("#color").val("#ffffff");
   $(".errorMessage").empty();
+
   $("#userTwitter").val("");
-  $("#userWebsite").click(function() {
+
+  $("#userWebsiteLink").click(function() {
     $(".userUrlForm").show();
     $(".userTwitterForm").hide();
     $(".userContactForm").hide();
   });
 
-  $("#userTwitter").click(function() {
+  $("#userTwitterLink").click(function() {
     $(".userUrlForm").hide();
     $(".userTwitterForm").show();
     $(".userContactForm").hide();
   });
 
-  $("#userContact").click(function() {
+  $("#userContactLink").click(function() {
     $(".userUrlForm").hide();
     $(".userTwitterForm").hide();
     $(".userContactForm").show();
