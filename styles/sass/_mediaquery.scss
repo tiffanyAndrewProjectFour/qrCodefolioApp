@@ -42,9 +42,9 @@
 
 // 480px
 @media (max-width: 480px) {
+  html,
   body {
     overflow-x: hidden;
-    position: relative;
   }
   .wrapper {
     width: 98%;
@@ -59,7 +59,7 @@
     }
   }
 
-  .qrGenerator input {
+  .inputBox input {
     width: 100%;
   }
 } //END OF 480PX QUERY

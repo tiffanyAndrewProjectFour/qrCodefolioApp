@@ -525,9 +525,9 @@ input[name="reset"]:hover {
 }
 
 @media (max-width: 480px) {
+  html,
   body {
     overflow-x: hidden;
-    position: relative;
   }
   .wrapper {
     width: 98%;
@@ -539,7 +539,7 @@ input[name="reset"]:hover {
   .logo p {
     font-size: 1.5rem;
   }
-  .qrGenerator input {
+  .inputBox input {
     width: 100%;
   }
 }
