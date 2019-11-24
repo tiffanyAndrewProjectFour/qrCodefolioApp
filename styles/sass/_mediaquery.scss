@@ -42,12 +42,9 @@
 
 // 480px
 @media (max-width: 480px) {
-  html,
-  body {
-    overflow-x: hidden;
-  }
   .wrapper {
     width: 98%;
+    overflow-x: hidden;
   }
   .logo {
     h1 {
