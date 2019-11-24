@@ -151,9 +151,6 @@ qrApp.meCard = function() {
     ) {
       const meCardAppend = `MECARD:N:${userName};TEL:${userTel};URL:${userUrl};EMAIL:${userEmail};;`;
       return qrApp.displayQr(meCardAppend, userColor, userWidth);
-    } else if (userName !== "" && userUrl !== "" && userEmail !== "") {
-      const meCardAppend = `MECARD:N:${userName};URL:${userUrl};EMAIL:${userEmail};;`;
-      return qrApp.displayQr(meCardAppend, userColor, userWidth);
     } else if (userName !== "" && userTel !== "" && userEmail !== "") {
       const meCardAppend = `MECARD:N:${userName};TEL:${userTel};EMAIL:${userEmail};;`;
       return qrApp.displayQr(meCardAppend, userColor, userWidth);
@@ -235,7 +232,7 @@ qrApp.init = function() {
   });
 
   $("input[type=reset]").click(function() {
-    location.reload();
+    window.location.reload();
   });
 };
 
