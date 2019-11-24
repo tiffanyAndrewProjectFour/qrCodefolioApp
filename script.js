@@ -66,23 +66,21 @@ qrApp.userSubmission = function() {
 };
 
 qrApp.userTwitterSubmission = function() {
-  $("#twitterForm").on("submit", function(e) {
+  $("form").on("submit", function(e) {
     e.preventDefault();
     const userTwitter = $("#userTwitter").val();
-    console.log(userTwitter);
-    const userWidth = parseInt($("#width").val());
-    console.log(userWidth);
-    const userColor = $("#color")
+    const userWidth = parseInt($("#widthTwitter").val());
+    const userColor = $("#colorTwitter")
       .val()
       .substring(1);
 
-    // if (userTwitter !== "") {
-    //   const userTwitterAppend = `twitter://user?screen_name=${userTwitter}`;
-    //   qrApp.displayQr(userTwitterAppend, userColor, userWidth);
-    // } else {
-    //   $(".errorTwitterMessage").html(`Please enter your Twitter Handle`);
-    //   return false;
-    // }
+    if (userTwitter !== "") {
+      const userTwitterAppend = `twitter://user?screen_name=${userTwitter}`;
+      qrApp.displayQr(userTwitterAppend, userColor, userWidth);
+    } else {
+      $(".errorTwitter").html(`Please enter your Twitter Handle`);
+      return false;
+    }
 
     if (userWidth > 300 || userWidth < 130 || isNaN(userWidth)) {
       $(".errorMessage").html(`Please enter value from 130px to 300px!`);
@@ -90,8 +88,6 @@ qrApp.userTwitterSubmission = function() {
     } else {
       $(".errorMessage").empty("");
     }
-
-    qrApp.displayQr(userTwitterAppend, userColor, userWidth);
   });
 };
 
@@ -123,6 +119,9 @@ qrApp.init = function() {
   $(".errorMessage").empty();
 
   $("#userTwitter").val("");
+  $("#widthTwitter").val("");
+  $("#colorTwitter").val("#ffffff");
+  $(".errorTwitter").empty();
 
   $("#userWebsiteLink").click(function() {
     $(".userUrlForm").show();
