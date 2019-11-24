@@ -96,117 +96,127 @@
           </div>
           <!--userInputForm END-->
 
-        <!-- User Twitter input -->
-        <div class="userTwitterForm">
-          <form action="submit" id = "twitterForm">
-            <div class="inputBox">
-              <label for="userTwitter">
-                Please enter your Twitter handle (without @ sign):
-              </label>
-              <input type="text" name="userTwitter" id="userTwitter" />
-            </div>
-            <!-- User width input -->
-            <div class="inputBox">
-              <label for="width" class="userWidth">
-                Please enter a size (in pixels) for your qr code. Your choice
-                will be both the height and the width (minimum of 130px and max
-                of 300px):
-              </label>
+          <!-- User Twitter input -->
+          <div class="userTwitterForm">
+            <form action="submit" id="twitterForm">
+              <div class="inputBox">
+                <label for="userTwitter">
+                  Please enter your Twitter handle (without @ sign):
+                </label>
+                <input type="text" name="userTwitter" id="userTwitter" />
+              </div>
+              <!-- User width input -->
+              <div class="inputBox">
+                <label for="width" class="userWidth">
+                  Please enter a size (in pixels) for your qr code. Your choice
+                  will be both the height and the width (minimum of 130px and
+                  max of 300px):
+                </label>
+                <input
+                  class="width"
+                  type="text"
+                  name="width"
+                  id="width"
+                  placeholder="ex. 200px"
+                  step="10"
+                />
+                <p class="errorMessage"></p>
+                <!-- User color input -->
+              </div>
+              <div class="inputBox">
+                <label for="color" class="userColor">
+                  Please click on the box below to select your color:
+                </label>
+                <input
+                  type="color"
+                  name="color"
+                  id="color"
+                  class="colorPicker"
+                />
+              </div>
+              <!-- Reset button -->
+              <label for="reset" class="visually-hidden">Reset</label>
               <input
-                class="width"
-                type="text"
-                name="width"
-                id="width"
-                placeholder="ex. 200px"
-                step="10"
+                type="reset"
+                value="reset fields"
+                name="reset"
+                id="reset"
               />
-              <p class="errorMessage"></p>
-              <!-- User color input -->
-            </div>
-            <div class="inputBox">
-              <label for="color" class="userColor">
-                Please click on the box below to select your color:
-              </label>
-              <input type="color" name="color" id="color" class="colorPicker" />
-            </div>
-            <!-- Reset button -->
-            <label for="reset" class="visually-hidden">Reset</label>
-            <input
-              type="reset"
-              value="reset fields"
-              name="reset"
-              id="reset"
-            />
-            <!-- Submission button -->
-            <button id="submit">submit</button>
-          </form>
-        </div>
-        <!--userTwitterForm END-->
+              <!-- Submission button -->
+              <button id="submit">submit</button>
+            </form>
+          </div>
+          <!--userTwitterForm END-->
 
-        <!-- User contact input -->
-        <div class="userContactForm">
-          <form action="submit">
-            <div class="inputBox">
-              <label for="userName">
-                Your name:
-              </label>
-              <input type="text" name="userName" id="userName" />
-            </div>
-            <div class="inputBox">
-              <label for="userPhone">
-                Your phone #:
-              </label>
-              <input type="tel" name="userPhone" id="userPhone" />
-            </div>
-            <div class="inputBox">
-              <label for="userEmail">
-                Your email address:
-              </label>
-              <input type="email" name="userEmail" id="userEmail" />
-            </div>
-            <div class="inputBox">
+          <!-- User contact input -->
+          <div class="userContactForm">
+            <form action="submit">
+              <div class="inputBox">
+                <label for="userName">
+                  Your name:
+                </label>
+                <input type="text" name="userName" id="userName" />
+              </div>
+              <div class="inputBox">
+                <label for="userPhone">
+                  Your phone #:
+                </label>
+                <input type="tel" name="userPhone" id="userPhone" />
+              </div>
+              <div class="inputBox">
+                <label for="userEmail">
+                  Your email address:
+                </label>
+                <input type="email" name="userEmail" id="userEmail" />
+              </div>
+              <div class="inputBox">
                 <label for="userUrl">
                   Your site (start with "www"):
                 </label>
                 <input type="text" name="userUrl" id="userUrl" />
-            </div>
-            <!-- User width input -->
-            <div class="inputBox">
-              <label for="width" class="userWidth">
-                Please enter a size (in pixels) for your qr code. Your choice
-                will be both the height and the width (minimum of 130px and max
-                of 300px):
-              </label>
+              </div>
+              <!-- User width input -->
+              <div class="inputBox">
+                <label for="width" class="userWidth">
+                  Please enter a size (in pixels) for your qr code. Your choice
+                  will be both the height and the width (minimum of 130px and
+                  max of 300px):
+                </label>
+                <input
+                  class="width"
+                  type="text"
+                  name="width"
+                  id="width"
+                  placeholder="ex. 200px"
+                  step="10"
+                />
+                <p class="errorMessage"></p>
+                <!-- User color input -->
+              </div>
+              <div class="inputBox">
+                <label for="color" class="userColor">
+                  Please click on the box below to select your color:
+                </label>
+                <input
+                  type="color"
+                  name="color"
+                  id="color"
+                  class="colorPicker"
+                />
+              </div>
+              <!-- Reset button -->
+              <label for="reset" class="visually-hidden">Reset</label>
               <input
-                class="width"
-                type="text"
-                name="width"
-                id="width"
-                placeholder="ex. 200px"
-                step="10"
+                type="reset"
+                value="reset fields"
+                name="reset"
+                id="reset"
               />
-              <p class="errorMessage"></p>
-              <!-- User color input -->
-            </div>
-            <div class="inputBox">
-              <label for="color" class="userColor">
-                Please click on the box below to select your color:
-              </label>
-              <input type="color" name="color" id="color" class="colorPicker" />
-            </div>
-            <!-- Reset button -->
-            <label for="reset" class="visually-hidden">Reset</label>
-            <input
-              type="reset"
-              value="reset fields"
-              name="reset"
-              id="reset"
-            />
-            <!-- Submission button -->
-            <button id="submit">submit</button>
-          </form>
-        </div>
-        <!--userInputForms END-->
+              <!-- Submission button -->
+              <button id="submit">submit</button>
+            </form>
+          </div>
+          <!--userInputForms END-->
 
           <!-- User preview area -->
           <div class="generatedPreview">
