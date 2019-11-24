@@ -68,11 +68,18 @@ qrApp.userSubmission = function() {
 qrApp.userTwitterSubmission = function() {
   $("form").on("submit", function(e) {
     e.preventDefault();
-    const userTwitter = $("#userTwitter").val();
+    const userTwitter = $("#userTwitterHandle").val();
     const userWidth = parseInt($("#widthTwitter").val());
     const userColor = $("#colorTwitter")
       .val()
       .substring(1);
+
+    if (userTwitter === "") {
+      $(".errorTwitter").html(`Please enter your Twitter Handle`);
+      return false;
+    } else {
+      $(".errorTwitter").empty("");
+    }
 
     if (userWidth > 300 || userWidth < 130 || isNaN(userWidth)) {
       $(".errorMessage").html(`Please enter value from 130px to 300px!`);
@@ -99,10 +106,19 @@ qrApp.meCard = function() {
     const userTel = $("#userPhone").val();
     const userEmail = $("#userEmail").val();
     const userUrl = $("#userUrlWebsite").val();
-    const userWidth = parseInt($("#userWidth").val());
+    const userWidth = parseInt($("#userWidthContact").val());
     const userColor = $("#userColor")
       .val()
       .substring(1);
+
+    if (userName === "" && userTel === "") {
+      $(".errorName").html(`Please enter name`);
+      $(".errorTel").html(`Please enter valid phone number`);
+      return false;
+    } else {
+      $(".errorName").empty("");
+      $(".errorTel").html("");
+    }
 
     if (userName === "") {
       $(".errorName").html(`Please enter name`);
@@ -174,7 +190,7 @@ qrApp.init = function() {
   $("#color").val("#ffffff");
   $(".errorMessage").empty();
 
-  $("#userTwitter").val("");
+  $("#userTwitterHandle").val("");
   $("#widthTwitter").val("");
   $("#colorTwitter").val("#ffffff");
   $(".errorTwitter").empty();
@@ -183,7 +199,7 @@ qrApp.init = function() {
   $("#userPhone").val("");
   $("#userEmail").val("");
   $("#userUrlWebsite").val("www.");
-  $("#userWidth").val("");
+  $("#userWidthContact").val("");
   $("#userColor").val("#ffffff");
   $(".errorName").empty();
   $(".errorTel").empty();
@@ -205,10 +221,6 @@ qrApp.init = function() {
     $(".userTwitterForm").hide();
     $(".userContactForm").show();
   });
-
-  $("#reset").click(function() {
-    window.location.reload();
-  });
 };
 
 //1. Document ready
@@ -216,6 +228,10 @@ $(function() {
   qrApp.init();
   $(".userTwitterForm").hide();
   $(".userContactForm").hide();
+
+  $("#reset").click(function() {
+    window.location.reload();
+  });
 });
 
 // technical challenge
