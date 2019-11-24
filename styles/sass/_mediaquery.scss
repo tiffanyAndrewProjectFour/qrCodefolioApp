@@ -42,6 +42,9 @@
 
 // 480px
 @media (max-width: 480px) {
+  .wrapper {
+    width: 98%;
+  }
   .logo {
     h1 {
       font-size: 4rem;
@@ -50,5 +53,9 @@
     p {
       font-size: 1.5rem;
     }
+  }
+
+  .qrGenerator input {
+    width: 100%;
   }
 } //END OF 480PX QUERY

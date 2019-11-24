@@ -525,11 +525,17 @@ input[name="reset"]:hover {
 }
 
 @media (max-width: 480px) {
+  .wrapper {
+    width: 98%;
+  }
   .logo h1 {
     font-size: 4rem;
     margin-top: 10%;
   }
   .logo p {
     font-size: 1.5rem;
+  }
+  .qrGenerator input {
+    width: 100%;
   }
 }
