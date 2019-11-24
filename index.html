@@ -31,12 +31,12 @@
               <a id="userWebsite" href="#url"><i class="fas fa-link"></i>URL</a>
             </li>
             <li>
-              <a id="userWebsite" href="#url"
+              <a id="userTwitter" href="#url"
                 ><i class="fab fa-twitter"></i>Twitter</a
               >
             </li>
             <li>
-              <a id="userWebsite" href="#url"
+              <a id="userContact" href="#url"
                 ><i class="fas fa-address-card"></i>Contact</a
               >
             </li>
@@ -89,7 +89,6 @@
                 value="reset fields"
                 name="reset"
                 id="reset"
-                onClick="window.location.reload()"
               />
               <!-- Submission button -->
               <button id="submit">submit</button>
@@ -97,25 +96,9 @@
           </div>
           <!--userInputForm END-->
 
-          <!-- User preview area -->
-          <div class="generatedPreview">
-            <div id="qrCode">
-              <img
-                src="./asset/QR-Code-Transparent.png"
-                alt="qrCodeSample"
-                class="imgTest"
-              />
-              <!-- this is where the live preview would go and the QR code -->
-            </div>
-            <!--qrCode div END-->
-          </div>
-          <!--generatedPreview div END-->
-        </div>
-        <!--flexParent div END-->
-
         <!-- User Twitter input -->
         <div class="userTwitterForm">
-          <form action="submit">
+          <form action="submit" id = "twitterForm">
             <div class="inputBox">
               <label for="userTwitter">
                 Please enter your Twitter handle (without @ sign):
@@ -153,7 +136,6 @@
               value="reset fields"
               name="reset"
               id="reset"
-              onClick="window.location.reload()"
             />
             <!-- Submission button -->
             <button id="submit">submit</button>
@@ -187,6 +169,7 @@
                   Your site (start with "www"):
                 </label>
                 <input type="text" name="userUrl" id="userUrl" />
+            </div>
             <!-- User width input -->
             <div class="inputBox">
               <label for="width" class="userWidth">
@@ -218,13 +201,28 @@
               value="reset fields"
               name="reset"
               id="reset"
-              onClick="window.location.reload()"
             />
             <!-- Submission button -->
             <button id="submit">submit</button>
           </form>
         </div>
         <!--userInputForms END-->
+
+          <!-- User preview area -->
+          <div class="generatedPreview">
+            <div id="qrCode">
+              <img
+                src="./asset/QR-Code-Transparent.png"
+                alt="qrCodeSample"
+                class="imgTest"
+              />
+              <!-- this is where the live preview would go and the QR code -->
+            </div>
+            <!--qrCode div END-->
+          </div>
+          <!--generatedPreview div END-->
+        </div>
+        <!--flexParent div END-->
       </section>
       <!--qrGenerator section END-->
     </main>
