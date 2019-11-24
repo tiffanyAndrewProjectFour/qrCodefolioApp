@@ -65,6 +65,86 @@ qrApp.userSubmission = function() {
   });
 };
 
+qrApp.userTwitterSubmission = function() {
+  $("form").on("submit", function(e) {
+    e.preventDefault();
+    const userTwitter = $("#userTwitter").val();
+    const userWidth = parseInt($("#widthTwitter").val());
+    const userColor = $("#colorTwitter")
+      .val()
+      .substring(1);
+
+    if (userWidth > 300 || userWidth < 130 || isNaN(userWidth)) {
+      $(".errorMessage").html(`Please enter value from 130px to 300px`);
+      return false;
+    } else {
+      $(".errorMessage").empty("");
+    }
+
+    if (userTwitter !== "") {
+      const userTwitterAppend = `twitter://user?screen_name=${userTwitter}`;
+      qrApp.displayQr(userTwitterAppend, userColor, userWidth);
+    } else {
+      $(".errorTwitter").html(`Please enter your twitter handle`);
+    }
+  });
+};
+
+qrApp.meCard = function() {
+  $("form").on("submit", function(e) {
+    e.preventDefault();
+    //MECARD:N:tiffany wong;TEL:6479383269;URL:www.tifcodes.com;EMAIL:tif.wong@yahoo.com;;
+    const userName = $("#userName").val();
+    const userTel = $("#userPhone").val();
+    const userEmail = $("#userEmail").val();
+    const userUrl = $("#userUrlWebsite").val();
+    const userWidth = parseInt($("#userWidthContact").val());
+    const userColor = $("#userColorContact")
+      .val()
+      .substring(1);
+
+    if (userName === "") {
+      $(".errorName").html(`Please enter name`);
+      return false;
+    } else {
+      $(".errorName").empty("");
+    }
+
+    if (userWidth > 300 || userWidth < 130 || isNaN(userWidth)) {
+      $(".errorMessage").html(`Please enter value from 130px to 300px`);
+      return false;
+    } else {
+      $(".errorMessage").empty("");
+    }
+
+    if (isNaN(parseInt(userTel))) {
+      $(".errorTel").html(`Please enter valid phone number`);
+      return false;
+    } else {
+      $(".errorTel").empty("");
+    }
+
+    if (
+      userName !== "" &&
+      userTel !== "" &&
+      userUrl !== "" &&
+      userEmail !== ""
+    ) {
+      const meCardAppend = `MECARD:N:${userName};TEL:${userTel};URL:${userUrl};EMAIL:${userEmail};;`;
+      return qrApp.displayQr(meCardAppend, userColor, userWidth);
+    } else if (userName !== "" && userUrl !== "" && userEmail !== "") {
+      const meCardAppend = `MECARD:N:${userName};URL:${userUrl};EMAIL:${userEmail};;`;
+      return qrApp.displayQr(meCardAppend, userColor, userWidth);
+    } else if (userName !== "" && userTel !== "" && userEmail !== "") {
+      const meCardAppend = `MECARD:N:${userName};TEL:${userTel};EMAIL:${userEmail};;`;
+      return qrApp.displayQr(meCardAppend, userColor, userWidth);
+    } else if (userName !== "" && userTel !== "" && userUrl !== "") {
+      const meCardAppend = `MECARD:N:${userName};TEL:${userTel};URL:${userUrl};;`;
+      return qrApp.displayQr(meCardAppend, userColor, userWidth);
+    }
+  });
+};
+
 // preview of changes
 $(".width").on("keyup", function() {
   $(".imgTest").css("width", this.value);
@@ -85,19 +165,56 @@ $("input[type='color']").on("change", function() {
 //3. Init to start the function
 qrApp.init = function() {
   qrApp.userSubmission();
+  qrApp.userTwitterSubmission();
+  qrApp.meCard();
+
   $("#userUrl").val("www.");
   $("#width").val("");
   $("#color").val("#ffffff");
   $(".errorMessage").empty();
-  $("#userWebsite").click(function() {
+
+  $("#userTwitter").val("");
+  $("#widthTwitter").val("");
+  $("#colorTwitter").val("#ffffff");
+  $(".errorTwitter").empty();
+
+  $("#userName").val("");
+  $("#userPhone").val("");
+  $("#userEmail").val("");
+  $("#userUrlWebsite").val("www.");
+  $("#userWidthContact").val("");
+  $("#userContactColor").val("#ffffff");
+  $(".errorName").empty();
+  $(".errorTel").empty();
+
+  $("#userWebsiteLink").click(function() {
     $(".userUrlForm").show();
     $(".userTwitterForm").hide();
+    $(".userContactForm").hide();
+  });
+
+  $("#userTwitterLink").click(function() {
+    $(".userUrlForm").hide();
+    $(".userTwitterForm").show();
+    $(".userContactForm").hide();
+  });
+
+  $("#userContactLink").click(function() {
+    $(".userUrlForm").hide();
+    $(".userTwitterForm").hide();
+    $(".userContactForm").show();
+  });
+
+  $("#reset").click(function() {
+    window.location.reload();
   });
 };
 
 //1. Document ready
 $(function() {
   qrApp.init();
+  $(".userTwitterForm").hide();
+  $(".userContactForm").hide();
 });
 
 // technical challenge
