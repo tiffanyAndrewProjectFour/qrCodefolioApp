@@ -217,7 +217,6 @@ qrApp.init = function() {
     $(".userUrlForm").hide();
     $(".userTwitterForm").show();
     $(".userContactForm").hide();
-    $(".userTwitterLink").toggleClass("currentLink");
     $(".userWebsiteLink").css("color", "#f7f6f5");
     $(".userTwitterLink").css("color", "#343039");
     $(".userContactLink").css("color", "#f7f6f5");
@@ -227,7 +226,6 @@ qrApp.init = function() {
     $(".userUrlForm").hide();
     $(".userTwitterForm").hide();
     $(".userContactForm").show();
-    $(".userContactLink").toggleClass("currentLink");
     $(".userWebsiteLink").css("color", "#f7f6f5");
     $(".userTwitterLink").css("color", "#f7f6f5");
     $(".userContactLink").css("color", "#343039");
