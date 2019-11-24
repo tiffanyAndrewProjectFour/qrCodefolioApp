@@ -65,6 +65,36 @@ qrApp.userSubmission = function() {
   });
 };
 
+qrApp.userTwitterSubmission = function() {
+  $("#twitterForm").on("submit", function(e) {
+    e.preventDefault();
+    const userTwitter = $("#userTwitter").val();
+    console.log(userTwitter);
+    const userWidth = parseInt($("#width").val());
+    console.log(userWidth);
+    const userColor = $("#color")
+      .val()
+      .substring(1);
+
+    // if (userTwitter !== "") {
+    //   const userTwitterAppend = `twitter://user?screen_name=${userTwitter}`;
+    //   qrApp.displayQr(userTwitterAppend, userColor, userWidth);
+    // } else {
+    //   $(".errorTwitterMessage").html(`Please enter your Twitter Handle`);
+    //   return false;
+    // }
+
+    if (userWidth > 300 || userWidth < 130 || isNaN(userWidth)) {
+      $(".errorMessage").html(`Please enter value from 130px to 300px!`);
+      return false;
+    } else {
+      $(".errorMessage").empty("");
+    }
+
+    qrApp.displayQr(userTwitterAppend, userColor, userWidth);
+  });
+};
+
 // preview of changes
 $(".width").on("keyup", function() {
   $(".imgTest").css("width", this.value);
@@ -85,19 +115,40 @@ $("input[type='color']").on("change", function() {
 //3. Init to start the function
 qrApp.init = function() {
   qrApp.userSubmission();
+  qrApp.userTwitterSubmission();
   $("#userUrl").val("www.");
   $("#width").val("");
   $("#color").val("#ffffff");
   $(".errorMessage").empty();
+  $("#userTwitter").val("");
   $("#userWebsite").click(function() {
     $(".userUrlForm").show();
     $(".userTwitterForm").hide();
+    $(".userContactForm").hide();
+  });
+
+  $("#userTwitter").click(function() {
+    $(".userUrlForm").hide();
+    $(".userTwitterForm").show();
+    $(".userContactForm").hide();
+  });
+
+  $("#userContact").click(function() {
+    $(".userUrlForm").hide();
+    $(".userTwitterForm").hide();
+    $(".userContactForm").show();
+  });
+
+  $("#reset").click(function() {
+    window.location.reload();
   });
 };
 
 //1. Document ready
 $(function() {
   qrApp.init();
+  $(".userTwitterForm").hide();
+  $(".userContactForm").hide();
 });
 
 // technical challenge
