@@ -508,6 +508,10 @@ input[name="reset"]:hover {
 }
 
 @media (max-width: 820px) {
+  .wrapper {
+    width: 95%;
+    overflow-x: hidden;
+  }
   .logo h1 {
     font-size: 5.5rem;
     margin-top: 5%;
