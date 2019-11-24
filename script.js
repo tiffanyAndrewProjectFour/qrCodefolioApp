@@ -189,6 +189,7 @@ qrApp.init = function() {
   $("#width").val("");
   $("#color").val("#ffffff");
   $(".errorMessage").empty();
+  $(".userWebsiteLink").css("color", "#343039");
 
   $("#userTwitterHandle").val("");
   $("#widthTwitter").val("");
@@ -230,6 +231,10 @@ qrApp.init = function() {
     $(".userTwitterLink").css("color", "#f7f6f5");
     $(".userContactLink").css("color", "#343039");
   });
+
+  $("input[type=reset]").click(function() {
+    window.location.reload();
+  });
 };
 
 //1. Document ready
@@ -237,14 +242,6 @@ $(function() {
   qrApp.init();
   $(".userTwitterForm").hide();
   $(".userContactForm").hide();
-
-  $("#reset").click(function() {
-    // $("#qrCode").html(
-    //   `<img src="./asset/QR-Code-Transparent.png" alt="qrCode" id = "qrCodeShow">`
-    // );
-    $("#qrCode").hide();
-    window.location.reload();
-  });
 });
 
 // technical challenge
