@@ -440,7 +440,10 @@ input[name="reset"]:hover {
   cursor: pointer;
 }
 
-.errorMessage {
+.errorMessage,
+.errorTwitter,
+.errorName,
+.errorTel {
   font-family: "Raleway", sans-serif;
   color: #ef6770;
   font-size: 1.5rem;
@@ -518,7 +521,9 @@ input[name="reset"]:hover {
             flex-direction: column;
     margin: 0 auto;
   }
-  .userUrlForm {
+  .userUrlForm,
+  .userTwitterForm,
+  .userContactForm {
     width: 100%;
   }
   .generatedPreview {
