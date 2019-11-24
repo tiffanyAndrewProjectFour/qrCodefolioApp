@@ -32,6 +32,8 @@ qrApp.displayQr = function(data, bgColor, width) {
         $("h1").hide();
         $("form").hide();
         $("button").hide();
+        $(".logo").hide();
+        $(".links").hide();
         $("#qrCodeShow").show();
         $("#qrCodeShow").addClass("print");
         $("body").css("height", "50vh");
@@ -233,7 +235,7 @@ qrApp.init = function() {
   });
 
   $("input[type=reset]").click(function() {
-    window.location.reload();
+    location.reload();
   });
 };
 
