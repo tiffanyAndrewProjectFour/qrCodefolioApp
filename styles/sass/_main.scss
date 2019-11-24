@@ -18,7 +18,7 @@ body {
   h1 {
     text-align: center;
     font-family: $playtone;
-    color: $black;
+    color: $fontColor;
     font-size: 8rem;
     margin: 1%;
   }
@@ -53,7 +53,7 @@ body {
       font-weight: 600;
       padding: 8px;
       &:hover {
-        color: $black;
+        color: $fontColor;
         cursor: pointer;
       }
       i {
@@ -78,7 +78,7 @@ body {
     border-style: none;
     border-radius: 5px;
     font-family: $raleway;
-    color: $black;
+    color: $fontColor;
     width: 80%;
     padding: 10px 15px 15px 50px;
     margin-top: 15px;
@@ -119,7 +119,7 @@ input[name="reset"] {
   width: 49%;
   background: $secondaryColor;
   padding: 30px;
-  color: $black;
+  color: $fontColor;
   font-family: $raleway;
   font-size: 2rem;
   line-height: 2.5rem;
