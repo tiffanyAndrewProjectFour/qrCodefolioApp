@@ -16,6 +16,12 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
+    <ul class="skipLinks">
+      <li><a href="#generatorSkipLink">Skip to qr generator</a></li>
+      <li><a href="#userUrl">URL generator</a></li>
+      <li><a href="#userTwitter">Twitter generator</a></li>
+      <li><a href="#userName">V card generator</a></li>
+    </ul>
     <main class="wrapper">
       <!-- LOGO section -->
       <div class="logo">
@@ -31,18 +37,18 @@
               <a id="userWebsite" href="#url"><i class="fas fa-link"></i>URL</a>
             </li>
             <li>
-              <a id="userWebsite" href="#url"
+              <a id="userWebsite" href="#twitter"
                 ><i class="fab fa-twitter"></i>Twitter</a
               >
             </li>
             <li>
-              <a id="userWebsite" href="#url"
+              <a id="userWebsite" href="#contact"
                 ><i class="fas fa-address-card"></i>Contact</a
               >
             </li>
           </ul>
         </div>
-        <div class="flexParent">
+        <div class="flexParent" id="generatorSkipLink">
           <div class="userUrlForm">
             <!-- User URL input -->
             <form action="submit">
