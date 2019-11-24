@@ -251,6 +251,26 @@ html {
   font-size: 62.5%;
 }
 
+.skipLinks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skipLinks a {
+  position: absolute;
+  top: -5rem;
+}
+
+.skipLinks a:focus {
+  top: 0;
+  font-size: 5rem;
+  font-family: "Paytone One", sans-serif;
+  color: #f7f6f5;
+  background: #343039;
+  padding: 10px;
+}
+
 .visually-hidden {
   position: absolute !important;
   height: 1px;
@@ -364,7 +384,7 @@ body {
 }
 
 .links ul a:hover {
-  color: #8070b2;
+  color: #343039;
   cursor: pointer;
 }
 

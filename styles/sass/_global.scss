@@ -1,9 +1,9 @@
 //Colors:
-$white: #f7f6f5;
-$pinkSwan: #c4b5b8;
-$sunglo: #ef6770;
-$deluge: #8070b2;
-$black: #343039;
+$mainColor: #ef6770;
+$secondaryColor: #f7f6f5;
+$fontColor: #343039;
+$accentColor: #c4b5b8;
+$secondaryAccent: #8070b2;
 
 //Fonts
 $playtone: "Paytone One", sans-serif;
@@ -25,6 +25,25 @@ html {
   font-size: 62.5%;
 }
 
+.skipLinks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skipLinks a {
+  position: absolute;
+  top: -5rem;
+  &:focus {
+    top: 0;
+    font-size: 5rem;
+    font-family: $playtone;
+    color: $secondaryColor;
+    background: $fontColor;
+    padding: 10px;
+  }
+}
+
 .visually-hidden {
   position: absolute !important;
   height: 1px;
@@ -44,12 +63,12 @@ html {
 button {
   font-size: 2.5rem;
   display: block;
-  background-color: $black;
+  background-color: $fontColor;
   border-style: none;
   text-transform: uppercase;
   font-family: $raleway;
   font-size: 2rem;
-  color: $white;
+  color: $secondaryColor;
   text-align: center;
   width: 50%;
   margin-top: 20px;
@@ -57,7 +76,7 @@ button {
   border-radius: 10px;
 
   &:hover {
-    background: $deluge;
+    background: $secondaryAccent;
     cursor: pointer;
   }
 }
