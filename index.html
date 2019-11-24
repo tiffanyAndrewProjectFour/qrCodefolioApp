@@ -165,12 +165,14 @@
                   Your name:
                 </label>
                 <input type="text" name="userName" id="userName" />
+                <p class="errorName"></p>
               </div>
               <div class="inputBox">
                 <label for="userPhone">
                   Your phone #:
                 </label>
                 <input type="tel" name="userPhone" id="userPhone" />
+                <p class="errorTel"></p>
               </div>
               <div class="inputBox">
                 <label for="userEmail">
@@ -182,7 +184,7 @@
                 <label for="userUrl">
                   Your site (start with "www"):
                 </label>
-                <input type="text" name="userUrl" id="userUrl" />
+                <input type="text" name="userUrl" id="userUrlWebsite" />
               </div>
               <!-- User width input -->
               <div class="inputBox">
@@ -195,7 +197,7 @@
                   class="width"
                   type="text"
                   name="width"
-                  id="width"
+                  id="userWidth"
                   placeholder="ex. 200px"
                   step="10"
                 />
@@ -209,7 +211,7 @@
                 <input
                   type="color"
                   name="color"
-                  id="color"
+                  id="userColor"
                   class="colorPicker"
                 />
               </div>

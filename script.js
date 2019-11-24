@@ -74,6 +74,13 @@ qrApp.userTwitterSubmission = function() {
       .val()
       .substring(1);
 
+    if (userWidth > 300 || userWidth < 130 || isNaN(userWidth)) {
+      $(".errorMessage").html(`Please enter value from 130px to 300px!`);
+      return false;
+    } else {
+      $(".errorMessage").empty("");
+    }
+
     if (userTwitter !== "") {
       const userTwitterAppend = `twitter://user?screen_name=${userTwitter}`;
       qrApp.displayQr(userTwitterAppend, userColor, userWidth);
@@ -81,12 +88,60 @@ qrApp.userTwitterSubmission = function() {
       $(".errorTwitter").html(`Please enter your Twitter Handle`);
       return false;
     }
+  });
+};
+
+qrApp.meCard = function() {
+  $("form").on("submit", function(e) {
+    e.preventDefault();
+    //MECARD:N:tiffany wong;TEL:6479383269;URL:www.tifcodes.com;EMAIL:tif.wong@yahoo.com;;
+    const userName = $("#userName").val();
+    const userTel = $("#userPhone").val();
+    const userEmail = $("#userEmail").val();
+    const userUrl = $("#userUrlWebsite").val();
+    const userWidth = parseInt($("#userWidth").val());
+    const userColor = $("#userColor")
+      .val()
+      .substring(1);
+
+    if (userName === "") {
+      $(".errorName").html(`Please enter name`);
+      return false;
+    } else {
+      $(".errorName").empty("");
+    }
 
     if (userWidth > 300 || userWidth < 130 || isNaN(userWidth)) {
-      $(".errorMessage").html(`Please enter value from 130px to 300px!`);
+      $(".errorMessage").html(`Please enter value from 130px to 300px`);
       return false;
     } else {
       $(".errorMessage").empty("");
+    }
+
+    if (isNaN(parseInt(userTel))) {
+      $(".errorTel").html(`Please enter valid phone number`);
+      return false;
+    } else {
+      $(".errorTel").empty("");
+    }
+
+    if (
+      userName !== "" &&
+      userTel !== "" &&
+      userUrl !== "" &&
+      userEmail !== ""
+    ) {
+      const meCardAppend = `MECARD:N:${userName};TEL:${userTel};URL:${userUrl};EMAIL:${userEmail};;`;
+      return qrApp.displayQr(meCardAppend, userColor, userWidth);
+    } else if (userName !== "" && userUrl !== "" && userEmail !== "") {
+      const meCardAppend = `MECARD:N:${userName};URL:${userUrl};EMAIL:${userEmail};;`;
+      return qrApp.displayQr(meCardAppend, userColor, userWidth);
+    } else if (userName !== "" && userTel !== "" && userEmail !== "") {
+      const meCardAppend = `MECARD:N:${userName};TEL:${userTel};EMAIL:${userEmail};;`;
+      return qrApp.displayQr(meCardAppend, userColor, userWidth);
+    } else if (userName !== "" && userTel !== "" && userUrl !== "") {
+      const meCardAppend = `MECARD:N:${userName};TEL:${userTel};URL:${userUrl};;`;
+      return qrApp.displayQr(meCardAppend, userColor, userWidth);
     }
   });
 };
@@ -112,6 +167,7 @@ $("input[type='color']").on("change", function() {
 qrApp.init = function() {
   qrApp.userSubmission();
   qrApp.userTwitterSubmission();
+  qrApp.meCard();
 
   $("#userUrl").val("www.");
   $("#width").val("");
@@ -122,6 +178,15 @@ qrApp.init = function() {
   $("#widthTwitter").val("");
   $("#colorTwitter").val("#ffffff");
   $(".errorTwitter").empty();
+
+  $("#userName").val("");
+  $("#userPhone").val("");
+  $("#userEmail").val("");
+  $("#userUrlWebsite").val("www.");
+  $("#userWidth").val("");
+  $("#userColor").val("#ffffff");
+  $(".errorName").empty();
+  $(".errorTel").empty();
 
   $("#userWebsiteLink").click(function() {
     $(".userUrlForm").show();
