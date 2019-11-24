@@ -526,6 +526,9 @@ input[name="reset"]:hover {
   .flexParent input {
     font-size: 1.6rem;
   }
+  .inputBox input {
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
