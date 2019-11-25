@@ -291,7 +291,6 @@ html {
 }
 
 button {
-  font-size: 2.5rem;
   display: block;
   background-color: #343039;
   border-style: none;
@@ -379,6 +378,7 @@ body {
 
 .qrGenerator {
   margin-bottom: 3%;
+  height: 100vh;
 }
 
 .links {
@@ -414,11 +414,6 @@ body {
 
 .links ul a i {
   padding-right: 5px;
-}
-
-.currentLink {
-  text-decoration: underline;
-  color: #343039;
 }
 
 .flexParent {

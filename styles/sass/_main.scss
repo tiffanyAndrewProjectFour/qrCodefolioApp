@@ -46,6 +46,7 @@ body {
 
 .qrGenerator {
   margin-bottom: 3%;
+  height: 100vh;
 }
 
 .links {
@@ -74,11 +75,6 @@ body {
       }
     }
   }
-}
-
-.currentLink {
-  text-decoration: underline;
-  color: $fontColor;
 }
 
 .flexParent {
