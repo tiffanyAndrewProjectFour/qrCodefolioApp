@@ -23,6 +23,7 @@ a {
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 .skipLinks {
@@ -79,4 +80,14 @@ button {
     background: $secondaryAccent;
     cursor: pointer;
   }
+
+  &:focus {
+    outline: 3px solid $mainColor;
+  }
+}
+
+input:focus,
+input[name="reset"]:focus,
+a:focus {
+  outline: 3px solid black;
 }

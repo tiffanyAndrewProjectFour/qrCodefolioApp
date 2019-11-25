@@ -13,14 +13,15 @@
       href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
     <ul class="skipLinks">
       <li><a href="#generatorSkipLink">Skip to qr generator</a></li>
-      <li><a href="#userUrl">URL generator</a></li>
-      <li><a href="#userTwitter">Twitter generator</a></li>
-      <li><a href="#userName">V card generator</a></li>
     </ul>
     <main class="wrapper">
       <!-- LOGO section -->
@@ -28,6 +29,17 @@
         <img src="./asset/qrCode.png" alt="" />
         <h1>QR Codefolio</h1>
         <p>Generate a QR Code for your brand!</p>
+        <a href="#generatorSkipLink"
+          ><i
+            aria-hidden="true"
+            class="animated infinite bounce delay-2s slower fas fa-angle-double-down"
+            title="go to the qr code generator"
+          >
+          </i
+        ></a>
+        <p class="getStarted">
+          <a href="#generatorSkipLink">Lets get started!</a>
+        </p>
       </div>
       <!-- Generator section -->
       <section class="qrGenerator">
@@ -35,17 +47,18 @@
           <ul>
             <li>
               <a id="userWebsiteLink" class="userWebsiteLink" href="#url"
-                ><i class="fas fa-link"></i>URL</a
+                ><i aria-hidden="true" class="fas fa-link"></i>URL</a
               >
             </li>
             <li>
               <a id="userTwitterLink" class="userTwitterLink" href="#twitter"
-                ><i class="fab fa-twitter"></i>Twitter</a
+                ><i aria-hidden="true" class="fab fa-twitter"></i>Twitter</a
               >
             </li>
             <li>
               <a id="userContactLink" class="userContactLink" href="#contact"
-                ><i class="fas fa-address-card"></i>Contact</a
+                ><i aria-hidden="true" class="fas fa-address-card"></i
+                >Contact</a
               >
             </li>
           </ul>

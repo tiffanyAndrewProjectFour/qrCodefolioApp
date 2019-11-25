@@ -249,6 +249,7 @@ a {
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 .skipLinks {
@@ -310,6 +311,16 @@ button:hover {
   cursor: pointer;
 }
 
+button:focus {
+  outline: 3px solid #ef6770;
+}
+
+input:focus,
+input[name="reset"]:focus,
+a:focus {
+  outline: 3px solid black;
+}
+
 body {
   background: #ef6770;
   margin: 0;
@@ -334,7 +345,7 @@ body {
 }
 
 .logo img {
-  height: 65%;
+  height: 60%;
 }
 
 .logo h1 {
@@ -351,6 +362,19 @@ body {
   font-size: 2.8rem;
   font-weight: 600;
   margin: 0.5%;
+}
+
+.logo i {
+  margin-top: 30px;
+  font-size: 2rem;
+  color: #343039;
+  display: block;
+}
+
+.logo .getStarted a {
+  color: #f7f6f5;
+  font-size: 1.8rem;
+  font-family: "Raleway", sans-serif;
 }
 
 .qrGenerator {

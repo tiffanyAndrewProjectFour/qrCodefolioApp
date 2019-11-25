@@ -118,7 +118,7 @@ qrApp.meCard = function() {
       $(".errorTel").html(`Please enter valid phone number`);
       return false;
     } else {
-      $(".errorName").empty("");
+      $(".errorName").html("");
       $(".errorTel").html("");
     }
 
@@ -180,6 +180,8 @@ $("input[type='color']").on("change", function() {
 
 //3. Init to start the function
 qrApp.init = function() {
+  $(".userWebsiteLink").css("color", "#343039");
+
   qrApp.userSubmission();
   qrApp.userTwitterSubmission();
   qrApp.meCard();
@@ -188,7 +190,6 @@ qrApp.init = function() {
   $("#width").val("");
   $("#color").val("#ffffff");
   $(".errorMessage").empty();
-  $(".userWebsiteLink").css("color", "#343039");
 
   $("#userTwitterHandle").val("");
   $("#widthTwitter").val("");
@@ -246,3 +247,4 @@ $(function() {
 // technical challenge
 // 1. the first API we found does not work because it produces an image instead of a JSON file.
 // 2. git commit pull and push
+// 3. figuring out the data that will work on each field, not a lot of documentation

@@ -13,7 +13,7 @@ body {
   height: 100vh;
   padding: 0;
   img {
-    height: 65%;
+    height: 60%;
   }
   h1 {
     text-align: center;
@@ -28,6 +28,19 @@ body {
     font-size: 2.8rem;
     font-weight: 600;
     margin: 0.5%;
+  }
+  i {
+    margin-top: 30px;
+    font-size: 2rem;
+    color: $fontColor;
+    display: block;
+  }
+  .getStarted {
+    a {
+      color: $secondaryColor;
+      font-size: 1.8rem;
+      font-family: $raleway;
+    }
   }
 }
 
