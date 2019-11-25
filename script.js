@@ -4,6 +4,7 @@ const qrApp = {};
 qrApp.baseUrl = "https://api.happi.dev/v1/qrCode?";
 qrApp.key = "49e3d00PdlOr6kNixKJddRalSAi41U3oPuUTmv6qDwobjjD9C9k0i0MW";
 
+// calling the API
 qrApp.getQr = function(qrQuery, qrColor, qrWidth) {
   const qrPromise = $.ajax({
     url: `${qrApp.baseUrl}`,
@@ -19,6 +20,7 @@ qrApp.getQr = function(qrQuery, qrColor, qrWidth) {
   return qrPromise;
 };
 
+// this is to display the QR code to the page
 qrApp.displayQr = function(data, bgColor, width) {
   qrApp
     .getQr(data, bgColor, width)
@@ -47,6 +49,7 @@ qrApp.displayQr = function(data, bgColor, width) {
     });
 };
 
+// submit the URL input to generate the QR code
 qrApp.userSubmission = function() {
   $("form").on("submit", function(e) {
     e.preventDefault();
@@ -67,6 +70,7 @@ qrApp.userSubmission = function() {
   });
 };
 
+// submit the twitter info to generate the QR code
 qrApp.userTwitterSubmission = function() {
   $("form").on("submit", function(e) {
     e.preventDefault();
@@ -100,10 +104,10 @@ qrApp.userTwitterSubmission = function() {
   });
 };
 
+// submit the meCard info to generate the QR code
 qrApp.meCard = function() {
   $("form").on("submit", function(e) {
     e.preventDefault();
-    //MECARD:N:tiffany wong;TEL:6479383269;URL:www.tifcodes.com;EMAIL:tif.wong@yahoo.com;;
     const userName = $("#userName").val();
     const userTel = $("#userPhone").val();
     const userEmail = $("#userEmail").val();
@@ -171,13 +175,6 @@ $("input[type='color']").on("change", function() {
   $(".imgTest").css("background-color", this.value);
 });
 
-//4. Pull user data from form with following parameters:
-//a) User's portfolio URL.
-//b) Buttons for user to select what format they want their qr code generated as (JPEG, PNG, SVG).
-//5. Make AJAX request to goqr.me to endpoint: https://api.qrserver.com/v1/create-qr-code/?data=
-
-//6. Generate the users qr code to the page based on users parameters.
-
 //3. Init to start the function
 qrApp.init = function() {
   $(".userWebsiteLink").css("color", "#343039");
@@ -186,6 +183,7 @@ qrApp.init = function() {
   qrApp.userTwitterSubmission();
   qrApp.meCard();
 
+  //clear all input when refreshing page
   $("#userUrl").val("www.");
   $("#width").val("");
   $("#color").val("#ffffff");
@@ -205,6 +203,7 @@ qrApp.init = function() {
   $(".errorName").empty();
   $(".errorTel").empty();
 
+  //click WebsiteLink
   $("#userWebsiteLink").click(function() {
     $(".userUrlForm").show();
     $(".userTwitterForm").hide();
@@ -214,6 +213,7 @@ qrApp.init = function() {
     $(".userContactLink").css("color", "#f7f6f5");
   });
 
+  //click TwitterLink
   $("#userTwitterLink").click(function() {
     $(".userUrlForm").hide();
     $(".userTwitterForm").show();
@@ -223,6 +223,7 @@ qrApp.init = function() {
     $(".userContactLink").css("color", "#f7f6f5");
   });
 
+  //click contactLink
   $("#userContactLink").click(function() {
     $(".userUrlForm").hide();
     $(".userTwitterForm").hide();
@@ -232,6 +233,7 @@ qrApp.init = function() {
     $(".userContactLink").css("color", "#343039");
   });
 
+  // reset button
   $("input[type=reset]").click(function() {
     window.location.reload();
   });
@@ -243,8 +245,3 @@ $(function() {
   $(".userTwitterForm").hide();
   $(".userContactForm").hide();
 });
-
-// technical challenge
-// 1. the first API we found does not work because it produces an image instead of a JSON file.
-// 2. git commit pull and push
-// 3. figuring out the data that will work on each field, not a lot of documentation
