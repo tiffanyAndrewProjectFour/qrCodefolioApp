@@ -4,7 +4,7 @@ const qrApp = {};
 qrApp.baseUrl = "https://api.happi.dev/v1/qrCode?";
 qrApp.key = "49e3d00PdlOr6kNixKJddRalSAi41U3oPuUTmv6qDwobjjD9C9k0i0MW";
 
-// calling the API
+// Calling the API
 qrApp.getQr = function(qrQuery, qrColor, qrWidth) {
   const qrPromise = $.ajax({
     url: `${qrApp.baseUrl}`,
@@ -20,7 +20,7 @@ qrApp.getQr = function(qrQuery, qrColor, qrWidth) {
   return qrPromise;
 };
 
-// this is to display the QR code to the page
+// This is to display the QR code to the page
 qrApp.displayQr = function(data, bgColor, width) {
   qrApp
     .getQr(data, bgColor, width)
@@ -49,7 +49,7 @@ qrApp.displayQr = function(data, bgColor, width) {
     });
 };
 
-// submit the URL input to generate the QR code
+// Submit the URL input to generate the QR code
 qrApp.userSubmission = function() {
   $("form").on("submit", function(e) {
     e.preventDefault();
@@ -70,7 +70,7 @@ qrApp.userSubmission = function() {
   });
 };
 
-// submit the twitter info to generate the QR code
+// Submit the twitter info to generate the QR code
 qrApp.userTwitterSubmission = function() {
   $("form").on("submit", function(e) {
     e.preventDefault();
@@ -104,7 +104,7 @@ qrApp.userTwitterSubmission = function() {
   });
 };
 
-// submit the meCard info to generate the QR code
+// Submit the meCard info to generate the QR code
 qrApp.meCard = function() {
   $("form").on("submit", function(e) {
     e.preventDefault();
@@ -165,7 +165,7 @@ qrApp.meCard = function() {
   });
 };
 
-// preview of changes
+// Preview of changes
 $(".width").on("keyup", function() {
   $(".imgTest").css("width", this.value);
   $(".imgTest").css("height", this.value);
@@ -183,7 +183,7 @@ qrApp.init = function() {
   qrApp.userTwitterSubmission();
   qrApp.meCard();
 
-  //clear all input when refreshing page
+  //Clear all input when refreshing page
   $("#userUrl").val("www.");
   $("#width").val("");
   $("#color").val("#ffffff");
@@ -203,7 +203,7 @@ qrApp.init = function() {
   $(".errorName").empty();
   $(".errorTel").empty();
 
-  //click WebsiteLink
+  //Click WebsiteLink
   $("#userWebsiteLink").click(function() {
     $(".userUrlForm").show();
     $(".userTwitterForm").hide();
@@ -213,7 +213,7 @@ qrApp.init = function() {
     $(".userContactLink").css("color", "#f7f6f5");
   });
 
-  //click TwitterLink
+  //Click TwitterLink
   $("#userTwitterLink").click(function() {
     $(".userUrlForm").hide();
     $(".userTwitterForm").show();
@@ -223,7 +223,7 @@ qrApp.init = function() {
     $(".userContactLink").css("color", "#f7f6f5");
   });
 
-  //click contactLink
+  //Click contactLink
   $("#userContactLink").click(function() {
     $(".userUrlForm").hide();
     $(".userTwitterForm").hide();
@@ -233,7 +233,7 @@ qrApp.init = function() {
     $(".userContactLink").css("color", "#343039");
   });
 
-  // reset button
+  // Reset button
   $("input[type=reset]").click(function() {
     window.location.reload();
   });
