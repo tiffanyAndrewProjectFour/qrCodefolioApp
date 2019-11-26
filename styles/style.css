@@ -589,9 +589,7 @@ input[name="reset"]:hover {
     width: 98%;
   }
   .logo img {
-    height: 70%;
-    -o-object-fit: fill;
-       object-fit: fill;
+    height: 50%;
   }
   .logo h1 {
     font-size: 4rem;
