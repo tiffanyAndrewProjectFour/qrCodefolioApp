@@ -657,6 +657,9 @@ input[name="reset"]:hover {
   .logo {
     height: 100vh;
   }
+  .logo h1 {
+    font-size: 3rem;
+  }
   img {
     width: 100px;
     height: auto;

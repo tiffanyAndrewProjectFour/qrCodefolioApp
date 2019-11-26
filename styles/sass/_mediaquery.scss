@@ -111,6 +111,9 @@
 @media (max-height: 375px) {
   .logo {
     height: 100vh;
+    h1 {
+      font-size: 3rem;
+    }
   }
 
   img {
