@@ -542,6 +542,19 @@ input[name="reset"]:hover {
   background-color: white;
 }
 
+footer {
+  text-align: center;
+  background: #343039;
+  padding: 0.5%;
+  color: #f7f6f5;
+  font-family: raleway;
+  font-size: 1.2rem;
+}
+
+footer a {
+  color: #ef6770;
+}
+
 @media (max-width: 1200px) {
   .flexParent {
     display: -webkit-box;
