@@ -29,22 +29,33 @@
     width: 95%;
   }
   .logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
     margin-bottom: 2%;
     img {
-      height: 80%;
+      width: 300px;
+      height: auto;
+      margin: 0;
     }
     h1 {
-      font-size: 5.5rem;
+      font-size: 5rem;
       margin-top: 5%;
     }
     p {
       font-size: 2rem;
+      margin-bottom: 10%;
     }
   }
 
-  .getStarted {
-    margin-bottom: 5%;
+  .logoFlex {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 50%;
   }
+
+  // \
 
   .qrGenerator {
     margin-top: 15%;
@@ -69,8 +80,12 @@
     width: 98%;
   }
   .logo {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     img {
-      height: 50%;
+      height: 40%;
     }
     h1 {
       font-size: 4rem;
@@ -80,6 +95,10 @@
       font-size: 1.5rem;
       margin-bottom: 3%;
     }
+  }
+
+  .logoFlex {
+    width: 100%;
   }
 
   .inputBox input {

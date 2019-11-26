@@ -328,24 +328,16 @@ body {
 }
 
 .logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   background-color: #ef6770;
   margin-top: 1%;
-  height: 100vh;
   padding: 0;
 }
 
 .logo img {
-  height: 60%;
+  display: block;
+  height: auto;
+  width: 420px;
+  margin: 0 auto;
 }
 
 .logo h1 {
@@ -371,6 +363,19 @@ body {
   display: block;
 }
 
+.logo .logoFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .logo .getStarted a {
   color: #f7f6f5;
   font-size: 1.8rem;
@@ -378,6 +383,7 @@ body {
 }
 
 .qrGenerator {
+  margin-top: 10%;
   padding-top: 1%;
   padding-bottom: 5%;
   height: 100vh;
@@ -563,20 +569,40 @@ input[name="reset"]:hover {
     width: 95%;
   }
   .logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 4%;
     margin-bottom: 2%;
   }
   .logo img {
-    height: 80%;
+    width: 300px;
+    height: auto;
+    margin: 0;
   }
   .logo h1 {
-    font-size: 5.5rem;
+    font-size: 5rem;
     margin-top: 5%;
   }
   .logo p {
     font-size: 2rem;
+    margin-bottom: 10%;
   }
-  .getStarted {
-    margin-bottom: 5%;
+  .logoFlex {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 50%;
   }
   .qrGenerator {
     margin-top: 15%;
@@ -594,8 +620,21 @@ input[name="reset"]:hover {
   .wrapper {
     width: 98%;
   }
+  .logo {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100vh;
+  }
   .logo img {
-    height: 50%;
+    height: 40%;
   }
   .logo h1 {
     font-size: 4rem;
@@ -604,6 +643,9 @@ input[name="reset"]:hover {
   .logo p {
     font-size: 1.5rem;
     margin-bottom: 3%;
+  }
+  .logoFlex {
+    width: 100%;
   }
   .inputBox input {
     width: 100%;
