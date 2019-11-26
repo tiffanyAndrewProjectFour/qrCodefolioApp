@@ -581,11 +581,16 @@ input[name="reset"]:hover {
 }
 
 @media (max-width: 480px) {
+  html {
+    overflow-x: hidden;
+  }
   .wrapper {
     width: 98%;
   }
   .logo img {
-    width: 90%;
+    height: 70%;
+    -o-object-fit: fill;
+       object-fit: fill;
   }
   .logo h1 {
     font-size: 4rem;
