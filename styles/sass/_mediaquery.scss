@@ -109,6 +109,10 @@
 
 //375px
 @media (max-height: 375px) {
+  .logo {
+    height: 100vh;
+  }
+
   img {
     width: 100px;
     height: auto;
