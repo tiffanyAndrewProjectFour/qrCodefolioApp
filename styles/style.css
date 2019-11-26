@@ -562,6 +562,9 @@ input[name="reset"]:hover {
   .wrapper {
     width: 95%;
   }
+  .logo img {
+    height: 80%;
+  }
   .logo h1 {
     font-size: 5.5rem;
     margin-top: 5%;
