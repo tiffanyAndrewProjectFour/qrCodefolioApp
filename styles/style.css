@@ -579,8 +579,8 @@ input[name="reset"]:hover {
     margin-bottom: 2%;
   }
   .logo img {
-    -o-object-fit: contain;
-       object-fit: contain;
+    -o-object-fit: cover;
+       object-fit: cover;
     margin: 0;
   }
   .logo h1 {
