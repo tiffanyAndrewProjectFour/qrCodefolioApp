@@ -250,6 +250,7 @@ a {
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .skipLinks {
@@ -581,9 +582,6 @@ input[name="reset"]:hover {
 }
 
 @media (max-width: 480px) {
-  html {
-    overflow-x: hidden;
-  }
   .wrapper {
     width: 98%;
   }
