@@ -1,6 +1,6 @@
 body {
   background: $mainColor;
-  // position: relative;
+  position: relative;
 }
 
 //Logo styling
@@ -179,4 +179,22 @@ input[name="reset"] {
   min-width: 130px;
   width: 200px;
   background-color: white;
+}
+
+footer {
+  // display: flex;
+  // justify-content: center;
+  // align-self: flex-end;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: $fontColor;
+  padding: 0.5%;
+  color: $secondaryColor;
+  font-family: raleway;
+  font-size: 1.2rem;
+  a {
+    color: $mainColor;
+  }
 }
