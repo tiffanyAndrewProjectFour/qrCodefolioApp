@@ -29,13 +29,13 @@
     width: 95%;
   }
   .logo {
-    display: flex;
-    justify-content: center;
+    flex-direction: row;
+    align-items: center;
     margin-top: 4%;
     margin-bottom: 2%;
     img {
       width: 400px;
-      height: auto;
+      min-height: auto;
       margin: 0;
     }
     h1 {
@@ -45,6 +45,7 @@
     p {
       font-size: 2rem;
       margin-bottom: 10%;
+      text-align: center;
     }
   }
 
@@ -83,10 +84,10 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     img {
       width: 400px;
-      height: auto;
+      min-height: auto;
     }
     h1 {
       font-size: 4rem;
@@ -105,12 +106,16 @@
   .inputBox input {
     width: 100%;
   }
+
+  footer {
+    margin-top: 5%;
+  }
 } //END OF 480PX QUERY
 
 //375px
 @media (max-height: 375px) {
   .logo {
-    height: 100vh;
+    min-height: 100vh;
     h1 {
       font-size: 3rem;
     }
@@ -118,6 +123,6 @@
 
   img {
     width: 75px;
-    height: auto;
+    min-height: auto;
   }
 }
