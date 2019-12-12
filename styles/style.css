@@ -557,7 +557,7 @@ input[name="reset"]:hover {
 
 footer {
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   width: 100%;
   text-align: center;
   background: #343039;
@@ -682,8 +682,8 @@ footer a {
   .inputBox input {
     width: 100%;
   }
-  footer {
-    margin-top: 5%;
+  .generatedPreview {
+    margin-bottom: 50px;
   }
 }
 

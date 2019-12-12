@@ -3,6 +3,7 @@ body {
   position: relative;
 }
 
+
 //Logo styling
 .logo {
   background-color: $mainColor;
@@ -190,7 +191,7 @@ footer {
   // justify-content: center;
   // align-self: flex-end;
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   width: 100%;
   text-align: center;
   background: $fontColor;
