@@ -27,18 +27,22 @@ qrApp.displayQr = function(data, bgColor, width) {
     .then(function(data) {
       $("#qrCode").html(
         `<img src=${data.qrcode} alt="qrCode" id = "qrCodeShow">
-      <button> <a href="${data.qrcode}" download="qrCode"> download </a> </button>
+      <button> <a href="${data.qrcode} download="qrCode"> download </a> </button>
       <button id = "printMe"> print </button>`
       );
       $("#printMe").on("click", function() {
         $("h1").hide();
         $("form").hide();
+        $("ul").hide();
         $("button").hide();
         $(".logo").hide();
+        $(".userUrlForm").hide();
         $(".links").hide();
+        $("footer").hide();
         $("#qrCodeShow").show();
         $("#qrCodeShow").addClass("print");
         $("body").css("height", "50vh");
+        $("#qrGenerator").css("min-height", "50vh");
         window.print();
       });
     })
