@@ -5,7 +5,7 @@ qrApp.baseUrl = "https://api.happi.dev/v1/qrCode?";
 qrApp.key = "49e3d00PdlOr6kNixKJddRalSAi41U3oPuUTmv6qDwobjjD9C9k0i0MW";
 
 // Calling the API
-qrApp.getQr = function(qrQuery, qrColor, qrWidth) {
+qrApp.getQr = function (qrQuery, qrColor, qrWidth) {
   const qrPromise = $.ajax({
     url: `${qrApp.baseUrl}`,
     method: "GET",
@@ -21,16 +21,16 @@ qrApp.getQr = function(qrQuery, qrColor, qrWidth) {
 };
 
 // This is to display the QR code to the page
-qrApp.displayQr = function(data, bgColor, width) {
+qrApp.displayQr = function (data, bgColor, width) {
   qrApp
     .getQr(data, bgColor, width)
-    .then(function(data) {
+    .then(function (data) {
       $("#qrCode").html(
         `<img src=${data.qrcode} alt="qrCode" id = "qrCodeShow">
-      <button> <a href="${data.qrcode} download="qrCode"> download </a> </button>
+      <button> <a href="${data.qrcode}" download="qrCode"> download </a> </button>
       <button id = "printMe"> print </button>`
       );
-      $("#printMe").on("click", function() {
+      $("#printMe").on("click", function () {
         $("h1").hide();
         $("form").hide();
         $("ul").hide();
@@ -46,7 +46,7 @@ qrApp.displayQr = function(data, bgColor, width) {
         window.print();
       });
     })
-    .fail(function(error) {
+    .fail(function (error) {
       $("body").html(
         "<h1> There is some error on the page. Please try again later </h1>"
       );
@@ -54,8 +54,8 @@ qrApp.displayQr = function(data, bgColor, width) {
 };
 
 // Submit the URL input to generate the QR code
-qrApp.userSubmission = function() {
-  $("form").on("submit", function(e) {
+qrApp.userSubmission = function () {
+  $("form").on("submit", function (e) {
     e.preventDefault();
     const userSite = $("#userUrl").val();
     const userWidth = parseInt($("#width").val());
@@ -75,8 +75,8 @@ qrApp.userSubmission = function() {
 };
 
 // Submit the twitter info to generate the QR code
-qrApp.userTwitterSubmission = function() {
-  $("form").on("submit", function(e) {
+qrApp.userTwitterSubmission = function () {
+  $("form").on("submit", function (e) {
     e.preventDefault();
     const userTwitter = $("#userTwitterHandle").val();
     const userWidth = parseInt($("#widthTwitter").val());
@@ -109,8 +109,8 @@ qrApp.userTwitterSubmission = function() {
 };
 
 // Submit the meCard info to generate the QR code
-qrApp.meCard = function() {
-  $("form").on("submit", function(e) {
+qrApp.meCard = function () {
+  $("form").on("submit", function (e) {
     e.preventDefault();
     const userName = $("#userName").val();
     const userTel = $("#userPhone").val();
@@ -170,17 +170,17 @@ qrApp.meCard = function() {
 };
 
 // Preview of changes
-$(".width").on("keyup", function() {
+$(".width").on("keyup", function () {
   $(".imgTest").css("width", this.value);
   $(".imgTest").css("height", this.value);
 });
 
-$("input[type='color']").on("change", function() {
+$("input[type='color']").on("change", function () {
   $(".imgTest").css("background-color", this.value);
 });
 
 //3. Init to start the function
-qrApp.init = function() {
+qrApp.init = function () {
   $(".userWebsiteLink").css("color", "#343039");
 
   qrApp.userSubmission();
@@ -208,7 +208,7 @@ qrApp.init = function() {
   $(".errorTel").empty();
 
   //Click WebsiteLink
-  $("#userWebsiteLink").click(function() {
+  $("#userWebsiteLink").click(function () {
     $(".userUrlForm").show();
     $(".userTwitterForm").hide();
     $(".userContactForm").hide();
@@ -218,7 +218,7 @@ qrApp.init = function() {
   });
 
   //Click TwitterLink
-  $("#userTwitterLink").click(function() {
+  $("#userTwitterLink").click(function () {
     $(".userUrlForm").hide();
     $(".userTwitterForm").show();
     $(".userContactForm").hide();
@@ -228,7 +228,7 @@ qrApp.init = function() {
   });
 
   //Click contactLink
-  $("#userContactLink").click(function() {
+  $("#userContactLink").click(function () {
     $(".userUrlForm").hide();
     $(".userTwitterForm").hide();
     $(".userContactForm").show();
@@ -238,13 +238,13 @@ qrApp.init = function() {
   });
 
   // Reset button
-  $("input[type=reset]").click(function() {
+  $("input[type=reset]").click(function () {
     window.location.reload();
   });
 };
 
 //1. Document ready
-$(function() {
+$(function () {
   qrApp.init();
   $(".userTwitterForm").hide();
   $(".userContactForm").hide();
