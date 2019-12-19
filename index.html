@@ -1,289 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>QR Codefolio</title>
-    <link rel="icon" href="./asset/icons8-qr-code-24.png" type="image/png" sizes="16x16">
-    <link
-      href="https://fonts.googleapis.com/css?family=Paytone+One|Raleway:400,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
-    />
-    <link rel="stylesheet" href="./styles/style.css" />
-  </head>
-  <body>
-    <!-- Skip Links -->
-    <ul class="skipLinks">
-      <li><a href="#generatorSkipLink">Skip to qr generator</a></li>
-    </ul>
-    <main class="wrapper">
-      <!-- LOGO section -->
-      <div class="logo">
-        <img
-          src="./asset/qrCode.png"
-          alt="cellphone with a qr code displayed"
-        />
-        <div class="logoFlex">
-          <h1>QR Codefolio</h1>
-          <p>Generate a QR Code for your brand!</p>
-          <a href="#qrGenerator"
-            ><i
-              aria-hidden="true"
-              class="animated infinite bounce delay-2s slower fas fa-angle-double-down"
-              title="go to the qr code generator"
-            >
-            </i
-          ></a>
-          <p class="getStarted">
-            <a href="#qrGenerator">Lets get started!</a>
-          </p>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>QR Codefolio</title>
+  <link rel="icon" href="./asset/icons8-qr-code-24.png" type="image/png" sizes="16x16">
+  <link href="https://fonts.googleapis.com/css?family=Paytone+One|Raleway:400,700&display=swap" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+</head>
+
+<body>
+  <!-- Skip Links -->
+  <ul class="skipLinks">
+    <li><a href="#generatorSkipLink">Skip to qr generator</a></li>
+  </ul>
+  <main class="wrapper">
+    <!-- LOGO section -->
+    <div class="logo">
+      <img src="./asset/qrCode.png" alt="cellphone with a qr code displayed" />
+      <div class="logoFlex">
+        <h1>QR Codefolio</h1>
+        <p>Generate a QR Code for your brand!</p>
+        <a href="#qrGenerator"><i aria-hidden="true"
+            class="animated infinite bounce delay-2s slower fas fa-angle-double-down"
+            title="go to the qr code generator">
+          </i></a>
+        <p class="getStarted">
+          <a href="#qrGenerator">Lets get started!</a>
+        </p>
       </div>
-      <!-- Generator section -->
-      <section class="qrGenerator" id="qrGenerator">
-        <div class="links wrapper">
-          <ul>
-            <li>
-              <a id="userWebsiteLink" class="userWebsiteLink" href="#url"
-                ><i aria-hidden="true" class="fas fa-link"></i>URL</a
-              >
-            </li>
-            <li>
-              <a id="userTwitterLink" class="userTwitterLink" href="#twitter"
-                ><i aria-hidden="true" class="fab fa-twitter"></i> Twitter</a
-              >
-            </li>
-            <li>
-              <a id="userContactLink" class="userContactLink" href="#contact"
-                ><i aria-hidden="true" class="fas fa-address-card"></i
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="flexParent" id="generatorSkipLink">
-          <div class="userUrlForm">
-            <!-- User URL input -->
-            <form action="submit">
-              <div class="inputBox">
-                <label for="userUrl">
-                  Please enter the website you would like your QR code to be
-                  linked to. It should begin with "www":
-                </label>
-                <input type="text" name="userUrl" id="userUrl" />
-              </div>
-              <!-- User width input -->
-              <div class="inputBox">
-                <label for="width" class="userWidth">
-                  Please enter a size (in pixels) for your qr code. Your choice
-                  will be both the height and the width (minimum of 130px and
-                  max of 300px):
-                </label>
-                <input
-                  class="width"
-                  type="text"
-                  name="width"
-                  id="width"
-                  placeholder="ex. 200px"
-                  step="10"
-                />
-                <p class="errorMessage"></p>
-                <!-- User color input -->
-              </div>
-              <div class="inputBox">
-                <label for="color" class="userColor">
-                  Please click on the box below to select your color:
-                </label>
-                <input
-                  type="color"
-                  name="color"
-                  id="color"
-                  class="colorPicker"
-                  value="#ffffff"
-                />
-              </div>
-              <!-- Reset button -->
-              <label for="reset" class="visually-hidden">Reset</label>
-              <input
-                type="reset"
-                value="reset fields"
-                name="reset"
-                id="reset"
-              />
-              <!-- Submission button -->
-              <button id="submit">submit</button>
-            </form>
-          </div>
-          <!--userInputForm END-->
-
-          <!-- User Twitter input -->
-          <div class="userTwitterForm">
-            <form action="submit" id="twitterForm">
-              <div class="inputBox">
-                <label for="userTwitter">
-                  Please enter your Twitter handle (without @ sign):
-                </label>
-                <input type="text" name="userTwitter" id="userTwitterHandle" />
-                <p class="errorTwitter"></p>
-              </div>
-              <!-- User width input -->
-              <div class="inputBox">
-                <label for="width" class="userWidth">
-                  Please enter a size (in pixels) for your qr code. Your choice
-                  will be both the height and the width (minimum of 130px and
-                  max of 300px):
-                </label>
-                <input
-                  class="width"
-                  type="text"
-                  name="width"
-                  id="widthTwitter"
-                  placeholder="ex. 200px"
-                  step="10"
-                />
-                <p class="errorMessage"></p>
-                <!-- User color input -->
-              </div>
-              <div class="inputBox">
-                <label for="color" class="userColor">
-                  Please click on the box below to select your color:
-                </label>
-                <input
-                  type="color"
-                  name="color"
-                  id="colorTwitter"
-                  class="colorPicker"
-                  value="#ffffff"
-                />
-              </div>
-              <!-- Reset button -->
-              <label for="reset" class="visually-hidden">Reset</label>
-              <input
-                type="reset"
-                value="reset fields"
-                name="reset"
-                id="reset2"
-              />
-              <!-- Submission button -->
-              <button id="submit">submit</button>
-            </form>
-          </div>
-          <!--userTwitterForm END-->
-
-          <!-- User contact input -->
-          <div class="userContactForm">
-            <form action="submit">
-              <div class="inputBox">
-                <label for="userName">
-                  Your name:
-                </label>
-                <input type="text" name="userName" id="userName" />
-                <p class="errorName"></p>
-              </div>
-              <div class="inputBox">
-                <label for="userPhone">
-                  Your phone #:
-                </label>
-                <input type="tel" name="userPhone" id="userPhone" />
-                <p class="errorTel"></p>
-              </div>
-              <div class="inputBox">
-                <label for="userEmail">
-                  Your email address:
-                </label>
-                <input type="email" name="userEmail" id="userEmail" />
-              </div>
-              <div class="inputBox">
-                <label for="userUrl">
-                  Your site (start with "www"):
-                </label>
-                <input type="text" name="userUrl" id="userUrlWebsite" />
-              </div>
-              <!-- User width input -->
-              <div class="inputBox">
-                <label for="width" class="userWidth">
-                  Please enter a size (in pixels) for your qr code. Your choice
-                  will be both the height and the width (minimum of 130px and
-                  max of 300px):
-                </label>
-                <input
-                  class="width"
-                  type="text"
-                  name="width"
-                  id="userWidthContact"
-                  placeholder="ex. 200px"
-                  step="10"
-                />
-                <p class="errorMessage"></p>
-                <!-- User color input -->
-              </div>
-              <div class="inputBox">
-                <label for="color" class="userColor">
-                  Please click on the box below to select your color:
-                </label>
-                <input
-                  type="color"
-                  name="color"
-                  id="userColor"
-                  class="colorPicker"
-                  value="#ffffff"
-                />
-              </div>
-              <!-- Reset button -->
-              <label for="reset" class="visually-hidden">Reset</label>
-              <input
-                type="reset"
-                value="reset fields"
-                name="reset"
-                id="reset3"
-              />
-              <!-- Submission button -->
-              <button id="submit">submit</button>
-            </form>
-          </div>
-          <!--userInputForms END-->
-
-          <!-- User preview area -->
-          <div class="generatedPreview">
-            <div id="qrCode">
-              <img
-                src="./asset/QR-Code-Transparent.png"
-                alt="Your sample qr code"
-                class="imgTest"
-              />
-              <!-- this is where the live preview would go and the QR code -->
+    </div>
+    <!-- Generator section -->
+    <section class="qrGenerator" id="qrGenerator">
+      <div class="links wrapper">
+        <ul>
+          <li>
+            <a id="userWebsiteLink" class="userWebsiteLink" href="#url"><i aria-hidden="true"
+                class="fas fa-link"></i>URL</a>
+          </li>
+          <li>
+            <a id="userTwitterLink" class="userTwitterLink" href="#twitter"><i aria-hidden="true"
+                class="fab fa-twitter"></i> Twitter</a>
+          </li>
+          <li>
+            <a id="userContactLink" class="userContactLink" href="#contact"><i aria-hidden="true"
+                class="fas fa-address-card"></i>Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flexParent" id="generatorSkipLink">
+        <div class="userUrlForm">
+          <!-- User URL input -->
+          <form action="submit">
+            <div class="inputBox">
+              <label for="userUrl">
+                Please enter the website you would like your QR code to be
+                linked to. It should begin with "www":
+              </label>
+              <input type="text" name="userUrl" id="userUrl" />
             </div>
-            <!--qrCode div END-->
-          </div>
-          <!--generatedPreview div END-->
+            <!-- User width input -->
+            <div class="inputBox">
+              <label for="width" class="userWidth">
+                Please enter a size (in pixels) for your qr code. Your choice
+                will be both the height and the width (minimum of 130px and
+                max of 300px):
+              </label>
+              <input class="width" type="text" name="width" id="width" placeholder="ex. 200px" step="10" />
+              <p class="errorMessage"></p>
+              <!-- User color input -->
+            </div>
+            <div class="inputBox">
+              <label for="color" class="userColor">
+                Please click on the box below to select your color:
+              </label>
+              <input type="color" name="color" id="color" class="colorPicker" value="#ffffff" />
+            </div>
+            <!-- user color input in text -->
+            <div class="inputBox">
+              <label for="colorText" class="userColorText">
+                Please enter a hex code to choose your color: (without #)
+              </label>
+              <input type="text" name="colorText" id="colorText" class="colorPickerText" placeholder="ffffff" />
+            </div>
+            <!-- Reset button -->
+            <label for="reset" class="visually-hidden">Reset</label>
+            <input type="reset" value="reset fields" name="reset" id="reset" />
+            <!-- Submission button -->
+            <button id="submit">submit</button>
+          </form>
         </div>
-        <!--flexParent div END-->
-      </section>
-      <!--qrGenerator section END-->
-    </main>
-    <!-- Import JQuery and script sheet -->
+        <!--userInputForm END-->
 
-    <footer>
-      <p>
-        Copyright &copy; <a href="https://github.com/tiffanyAndrewProjectFour/tiffanyAndrewProjectFour"> Tiffany Wong and Andrew Alexander. </a> Icons made by
-        <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a>
-        from
-        <a href="https://www.flaticon.com/" title="Flaticon"
-          >www.flaticon.com. </a
-        ><a target="_blank" href="/icons/set/qr-code">QR Code icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-      </p>
-    </footer>
+        <!-- User Twitter input -->
+        <div class="userTwitterForm">
+          <form action="submit" id="twitterForm">
+            <div class="inputBox">
+              <label for="userTwitter">
+                Please enter your Twitter handle (without @ sign):
+              </label>
+              <input type="text" name="userTwitter" id="userTwitterHandle" />
+              <p class="errorTwitter"></p>
+            </div>
+            <!-- User width input -->
+            <div class="inputBox">
+              <label for="width" class="userWidth">
+                Please enter a size (in pixels) for your qr code. Your choice
+                will be both the height and the width (minimum of 130px and
+                max of 300px):
+              </label>
+              <input class="width" type="text" name="width" id="widthTwitter" placeholder="ex. 200px" step="10" />
+              <p class="errorMessage"></p>
+              <!-- User color input -->
+            </div>
+            <div class="inputBox">
+              <label for="color" class="userColor">
+                Please click on the box below to select your color:
+              </label>
+              <input type="color" name="color" id="colorTwitter" class="colorPicker" value="#ffffff" />
+            </div>
+            <!-- user color input in text -->
+            <div class="inputBox">
+              <label for="colorText" class="userColorText">
+                Please enter a hex code to choose your color: (without #)
+              </label>
+              <input type="text" name="colorText" id="colorTextTwitter" class="colorPickerText" placeholder="ffffff" />
+            </div>
+            <!-- Reset button -->
+            <label for="reset" class="visually-hidden">Reset</label>
+            <input type="reset" value="reset fields" name="reset" id="reset2" />
+            <!-- Submission button -->
+            <button id="submit">submit</button>
+          </form>
+        </div>
+        <!--userTwitterForm END-->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+        <!-- User contact input -->
+        <div class="userContactForm">
+          <form action="submit">
+            <div class="inputBox">
+              <label for="userName">
+                Your name:
+              </label>
+              <input type="text" name="userName" id="userName" />
+              <p class="errorName"></p>
+            </div>
+            <div class="inputBox">
+              <label for="userPhone">
+                Your phone #:
+              </label>
+              <input type="tel" name="userPhone" id="userPhone" />
+              <p class="errorTel"></p>
+            </div>
+            <div class="inputBox">
+              <label for="userEmail">
+                Your email address:
+              </label>
+              <input type="email" name="userEmail" id="userEmail" />
+            </div>
+            <div class="inputBox">
+              <label for="userUrl">
+                Your site (start with "www"):
+              </label>
+              <input type="text" name="userUrl" id="userUrlWebsite" />
+            </div>
+            <!-- User width input -->
+            <div class="inputBox">
+              <label for="width" class="userWidth">
+                Please enter a size (in pixels) for your qr code. Your choice
+                will be both the height and the width (minimum of 130px and
+                max of 300px):
+              </label>
+              <input class="width" type="text" name="width" id="userWidthContact" placeholder="ex. 200px" step="10" />
+              <p class="errorMessage"></p>
+              <!-- User color input -->
+            </div>
+            <div class="inputBox">
+              <label for="color" class="userColor">
+                Please click on the box below to select your color:
+              </label>
+              <input type="color" name="color" id="userColor" class="colorPicker" value="#ffffff" />
+            </div>
+            <!-- user color input in text -->
+            <div class="inputBox">
+              <label for="colorText" class="userColorText">
+                Please enter a hex code to choose your color: (without #)
+              </label>
+              <input type="text" name="colorText" id="userColorText" class="colorPickerText" placeholder="ffffff" />
+            </div>
+            <!-- Reset button -->
+            <label for="reset" class="visually-hidden">Reset</label>
+            <input type="reset" value="reset fields" name="reset" id="reset3" />
+            <!-- Submission button -->
+            <button id="submit">submit</button>
+          </form>
+        </div>
+        <!--userInputForms END-->
+
+        <!-- User preview area -->
+        <div class="generatedPreview">
+          <div id="qrCode">
+            <img src="./asset/QR-Code-Transparent.png" alt="Your sample qr code" class="imgTest" />
+            <!-- this is where the live preview would go and the QR code -->
+          </div>
+          <!--qrCode div END-->
+        </div>
+        <!--generatedPreview div END-->
+      </div>
+      <!--flexParent div END-->
+    </section>
+    <!--qrGenerator section END-->
+  </main>
+  <!-- Import JQuery and script sheet -->
+
+  <footer>
+    <p>
+      Copyright &copy; <a href="https://github.com/tiffanyAndrewProjectFour/tiffanyAndrewProjectFour"> Tiffany Wong and
+        Andrew Alexander. </a> Icons made by
+      <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a>
+      from
+      <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com. </a><a target="_blank"
+        href="/icons/set/qr-code">QR Code icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    </p>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>

@@ -62,6 +62,7 @@ qrApp.userSubmission = function () {
     const userColor = $("#color")
       .val()
       .substring(1);
+    const userColorText = $("#colorText").val();
 
     if (userWidth > 300 || userWidth < 130 || isNaN(userWidth)) {
       $(".errorMessage").html(`Please enter value from 130px to 300px!`);
@@ -70,7 +71,11 @@ qrApp.userSubmission = function () {
       $(".errorMessage").empty("");
     }
 
-    qrApp.displayQr(userSite, userColor, userWidth);
+    if (userColorText !== "") {
+      qrApp.displayQr(userSite, userColorText, userWidth);
+    } else {
+      qrApp.displayQr(userSite, userColor, userWidth);
+    }
   });
 };
 
@@ -83,6 +88,7 @@ qrApp.userTwitterSubmission = function () {
     const userColor = $("#colorTwitter")
       .val()
       .substring(1);
+    const userColorText = $("#colorTextTwitter").val();
 
     if (userTwitter === "") {
       $(".errorTwitter").html(`Please enter your Twitter Handle`);
@@ -98,7 +104,10 @@ qrApp.userTwitterSubmission = function () {
       $(".errorMessage").empty("");
     }
 
-    if (userTwitter !== "") {
+    if (userTwitter !== "" && userColorText !== "") {
+      const userTwitterAppend = `twitter://user?screen_name=${userTwitter}`;
+      qrApp.displayQr(userTwitterAppend, userColorText, userWidth);
+    } else if (userTwitter !== "") {
       const userTwitterAppend = `twitter://user?screen_name=${userTwitter}`;
       qrApp.displayQr(userTwitterAppend, userColor, userWidth);
     } else {
@@ -120,6 +129,7 @@ qrApp.meCard = function () {
     const userColor = $("#userColor")
       .val()
       .substring(1);
+    const userColorText = $("#userColorText").val();
 
     if (userName === "" && userTel === "") {
       $(".errorName").html(`Please enter name`);
@@ -155,13 +165,29 @@ qrApp.meCard = function () {
       userName !== "" &&
       userTel !== "" &&
       userUrl !== "" &&
+      userEmail !== "" &&
+      userColorText !== ""
+    ) {
+      const meCardAppend = `MECARD:N:${userName};TEL:${userTel};URL:${userUrl};EMAIL:${userEmail};;`;
+      return qrApp.displayQr(meCardAppend, userColorText, userWidth);
+    } else if (
+      userName !== "" &&
+      userTel !== "" &&
+      userUrl !== "" &&
       userEmail !== ""
     ) {
       const meCardAppend = `MECARD:N:${userName};TEL:${userTel};URL:${userUrl};EMAIL:${userEmail};;`;
       return qrApp.displayQr(meCardAppend, userColor, userWidth);
+    } else if (userName !== "" && userTel !== "" && userEmail !== "" &&
+      userColorText !== "") {
+      const meCardAppend = `MECARD:N:${userName};TEL:${userTel};EMAIL:${userEmail};;`;
+      return qrApp.displayQr(meCardAppend, userColorText, userWidth);
     } else if (userName !== "" && userTel !== "" && userEmail !== "") {
       const meCardAppend = `MECARD:N:${userName};TEL:${userTel};EMAIL:${userEmail};;`;
       return qrApp.displayQr(meCardAppend, userColor, userWidth);
+    } else if (userName !== "" && userTel !== "" && userUrl !== "" && userColorText !== "") {
+      const meCardAppend = `MECARD:N:${userName};TEL:${userTel};URL:${userUrl};;`;
+      return qrApp.displayQr(meCardAppend, userColorText, userWidth);
     } else if (userName !== "" && userTel !== "" && userUrl !== "") {
       const meCardAppend = `MECARD:N:${userName};TEL:${userTel};URL:${userUrl};;`;
       return qrApp.displayQr(meCardAppend, userColor, userWidth);
@@ -179,6 +205,10 @@ $("input[type='color']").on("change", function () {
   $(".imgTest").css("background-color", this.value);
 });
 
+$(".colorPickerText").on("change", function () {
+  $(".imgTest").css("background-color", this.value);
+});
+
 //3. Init to start the function
 qrApp.init = function () {
   $(".userWebsiteLink").css("color", "#343039");
@@ -191,11 +221,13 @@ qrApp.init = function () {
   $("#userUrl").val("www.");
   $("#width").val("");
   $("#color").val("#ffffff");
+  $("#colorText").val("");
   $(".errorMessage").empty();
 
   $("#userTwitterHandle").val("");
   $("#widthTwitter").val("");
   $("#colorTwitter").val("#ffffff");
+  $("#colorTextTwitter").val("");
   $(".errorTwitter").empty();
 
   $("#userName").val("");
@@ -204,6 +236,7 @@ qrApp.init = function () {
   $("#userUrlWebsite").val("www.");
   $("#userWidthContact").val("");
   $("#userColor").val("#ffffff");
+  $("#userColorText").val("");
   $(".errorName").empty();
   $(".errorTel").empty();
 
